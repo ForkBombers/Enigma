@@ -1,6 +1,6 @@
 discord.py==2.2.2
-numpy==1.22.3
-pandas==1.4.2
+numpy==1.26.4
+pandas==2.2.3
 python-dotenv==0.21.0
 setuptools==63.2.0
 yt_dlp

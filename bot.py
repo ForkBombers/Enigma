@@ -18,7 +18,8 @@ from Cogs.songs_cog import Songs
 logging.basicConfig(level=logging.INFO)
 load_dotenv('.env')
 TOKEN = os.getenv('DISCORD_TOKEN')
-VOICE_CHANNEL_ID = 1300855852374163497 # Group 86 VC
+VOICE_CHANNEL_ID = 924705413172183044 # NoName VC
+# 1300855852374163497 # Group 86 VC
 # 1299270426794524708 # Enigma test general
 # 1300499798545141873 # Hotel Quink Server
 # 1300287459451736064 - SQUAD Server
