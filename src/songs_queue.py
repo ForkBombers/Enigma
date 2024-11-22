@@ -80,5 +80,9 @@ class Songs_Queue:
         else:
             raise IndexError("Index out of range")
         
-    
+    def get_song_at_index(self, index):
+        if 0 <= index < len(self.queue):
+            return self.queue[index]
+        else:
+            return None
 
