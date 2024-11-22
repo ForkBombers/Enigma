@@ -157,7 +157,7 @@ class Songs(commands.Cog):
             # Play the audio
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
             voice_channel.play(player)
-            
+
         except Exception as e:
             # Generic error handling, providing a more detailed message
             await ctx.send(f"An error occurred while trying to play the song: {str(e)}")
@@ -239,6 +239,32 @@ class Songs(commands.Cog):
             await ctx.send("The song is paused now.")
         else:
             await ctx.send("The bot is not playing anything at the moment.")
+
+    """
+    Function to jump to a specific song in the queue
+    """
+    @commands.command(name="jump_to", help="Jump to a specific song in the queue")
+    @has_role_dj()
+    async def jump_to(self, ctx, *, song_name: str):
+        empty_queue = await self.handle_empty_queue(ctx)
+        if empty_queue:
+            return
+
+        jumped_song = self.songs_queue.jump_to_song(song_name)
+    
+        if jumped_song is None:
+            await ctx.send(f"Song '{song_name}' not found in the queue.")
+            return
+
+        # Stop the current song if it's playing
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
+
+        # Play the selected song
+        await ctx.send(f"Jumping to: {jumped_song}")
+        await self.play_song(ctx, jumped_song)
+
 
     """
     Function to generate poll for playing the recommendations

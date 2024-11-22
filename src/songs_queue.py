@@ -64,7 +64,21 @@ class Songs_Queue:
     def shuffle_queue(self):
         shuffle(self.queue)
         self.save_to_json()
+        self.index = 0
+        self.current_index = 0
+        self.save_to_json()
 
     def add_to_queue(self, song_name):
         self.queue.append(song_name)
         self.save_to_json()
+
+    def set_current_index(self, index):
+        if 0 <= index < len(self.queue):
+            self.index = index
+            self.current_index = index
+            self.save_to_json()
+        else:
+            raise IndexError("Index out of range")
+        
+    
+
