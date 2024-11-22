@@ -85,4 +85,13 @@ class Songs_Queue:
             return self.queue[index]
         else:
             return None
+        
+    def jump_to_song(self, song_name):
+        for i, song in enumerate(self.queue):
+            if song_name.lower() in song.lower():
+                self.index = i
+                self.current_index = i
+                self.save_to_json()
+                return song
+        return None
 
