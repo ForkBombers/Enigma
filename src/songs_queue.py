@@ -2,7 +2,9 @@ import json
 import os
 from random import shuffle
 
+
 class Songs_Queue:
+
     def __init__(self, song_names=None):
         self.file_path = "songs_queue.json"
         if song_names is not None:

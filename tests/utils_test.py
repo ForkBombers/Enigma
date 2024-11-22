@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 from src.utils import searchSong, random_25, has_role_dj, update_vc_status, check_vc_status
 
+
 class TestUtils(unittest.TestCase):
 
     def test_random_25(self):
@@ -16,7 +17,7 @@ class TestUtils(unittest.TestCase):
         ctx = MagicMock()
         ctx.guild.roles = ["DJ", "User"]
         ctx.author.roles = ["DJ"]
-        
+
         mock_get.return_value = "DJ"
 
         # Create a dummy command
@@ -52,9 +53,10 @@ class TestUtils(unittest.TestCase):
 
     def test_check_vc_status(self):
         global vc_connected
-        
+
         # Test when vc is connected
         vc_connected = True
+
         @commands.command()
         @check_vc_status()
         async def dummy_command(ctx):

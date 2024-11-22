@@ -1,6 +1,7 @@
 import unittest
 from src.songs_queue import Songs_Queue
 
+
 class TestSongsQueue(unittest.TestCase):
 
     def setUp(self):
@@ -16,7 +17,7 @@ class TestSongsQueue(unittest.TestCase):
         # Test normal next song functionality
         for i in range(len(self.sample_songs)):
             self.assertEqual(self.queue.next_song(), self.sample_songs[i])
-        
+
         # Test wrapping around to the beginning
         self.assertEqual(self.queue.next_song(), self.sample_songs[0])
 
@@ -24,11 +25,11 @@ class TestSongsQueue(unittest.TestCase):
         # Move to the end of the queue
         for _ in range(len(self.sample_songs)):
             self.queue.next_song()
-        
+
         # Test normal previous song functionality
         for i in range(len(self.sample_songs) - 1, -1, -1):
             self.assertEqual(self.queue.prev_song(), self.sample_songs[i])
-        
+
         # Test wrapping around to the end
         self.assertEqual(self.queue.prev_song(), self.sample_songs[-1])
 
@@ -43,7 +44,9 @@ class TestSongsQueue(unittest.TestCase):
         # Test after moving to next song
         self.queue.next_song()
         returned_queue, current_index = self.queue.return_queue()
-        self.assertEqual(current_index, 0)  # Because next_song() updates current_index after returning
+        self.assertEqual(
+            current_index,
+            0)  # Because next_song() updates current_index after returning
 
     def test_shuffle_queue(self):
         original_queue = self.queue.queue.copy()
@@ -57,6 +60,7 @@ class TestSongsQueue(unittest.TestCase):
         self.queue.add_to_queue(new_song)
         self.assertEqual(self.queue.get_len(), original_length + 1)
         self.assertEqual(self.queue.queue[-1], new_song)
+
 
 if __name__ == '__main__':
     unittest.main()
