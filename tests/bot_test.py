@@ -52,7 +52,8 @@ class TestDiscordBot(unittest.IsolatedAsyncioTestCase):
         ctx.send = AsyncMock()
 
         await client.on_command_error(ctx, error)
-        ctx.send.assert_called_once_with("You need the DJ role to use this command!")
+        ctx.send.assert_called_once_with(
+            "You need the DJ role to use this command!")
 
 
 if __name__ == "_main_":

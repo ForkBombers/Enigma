@@ -16,12 +16,12 @@ from src.get_all import *
 from src.utils import searchSong, random_25, has_role_dj, check_vc_status
 from src.songs_queue import Songs_Queue
 
-
 # client = commands.Bot(command_prefix=']', intents=intents)
 # client.add_check(check_vc_status)
 
 FFMPEG_OPTIONS = {
-    "before_options": "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5",
+    "before_options":
+    "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5",
     "options": [
         "ffmpeg",
         "-i",
@@ -33,8 +33,11 @@ FFMPEG_OPTIONS = {
     ],
 }
 
-
-ffmpeg_options = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options': '-vn -filter:a "volume=0.25"'}
+ffmpeg_options = {
+    'before_options':
+    '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
+    'options': '-vn -filter:a "volume=0.25"'
+}
 
 youtube_base_url = 'https://www.youtube.com/'
 youtube_results_url = youtube_base_url + 'results?'
@@ -42,6 +45,7 @@ youtube_watch_url = youtube_base_url + 'watch?v='
 YDL_OPTIONS = {'format': 'bestaudio/best', 'noplaylist': 'True'}
 ytdl = yt_dlp.YoutubeDL(YDL_OPTIONS)
 # self.songs_queue = []
+
 
 class Songs(commands.Cog):
     """
@@ -62,18 +66,18 @@ class Songs(commands.Cog):
     #     user_message = str(ctx.message.content)
     #     song_name = user_message.split(' ', 1)[1]
     #     await self.play_song(song_name, ctx)
-
-
     """
     Function to resume playing
     """
+
     @commands.command(name="resume", help="Resumes the song")
     @has_role_dj()
     async def resume(self, ctx):
         voice_client = ctx.message.guild.voice_client
         if voice_client is None:
 
-            await ctx.send("The bot is not connected to any voice channel at the moment.")
+            await ctx.send(
+                "The bot is not connected to any voice channel at the moment.")
 
         if voice_client.is_paused():
             await voice_client.resume()
@@ -95,10 +99,9 @@ class Songs(commands.Cog):
         if voice_client.is_playing():
             voice_client.pause()
             await self.play_song(ctx, song_name=song_name)
-            return # 
-        
-        # await self.play_song(ctx, song_name=song_name)
+            return  #
 
+        # await self.play_song(ctx, song_name=song_name)
 
     """
     Function to stop playing the music
@@ -117,43 +120,48 @@ class Songs(commands.Cog):
         try:
             server = ctx.message.guild
             voice_channel = server.voice_client
-            
+
             # Check if the bot is connected to a voice channel
             if not voice_channel:
-                await ctx.send("The bot is not connected to any voice channel.")
+                await ctx.send("The bot is not connected to any voice channel."
+                               )
                 return
-            
+
             # Stop any currently playing audio before starting a new one
             if voice_channel.is_playing():
                 voice_channel.stop()
-            
+
             # Check if song_name is a YouTube URL; otherwise, perform a search
             if youtube_base_url not in song_name:
-                query_string = urllib.parse.urlencode({'search_query': song_name})
-                content = urllib.request.urlopen(youtube_results_url + query_string)
-                search_results = re.findall(r'/watch\?v=(.{11})', content.read().decode())
+                query_string = urllib.parse.urlencode(
+                    {'search_query': song_name})
+                content = urllib.request.urlopen(youtube_results_url +
+                                                 query_string)
+                search_results = re.findall(r'/watch\?v=(.{11})',
+                                            content.read().decode())
                 if not search_results:
                     await ctx.send("No results found for the song.")
                     return
-                
+
                 link = youtube_watch_url + search_results[0]
             else:
                 link = song_name  # song_name is already a URL
-            
+
             # Fetch video data asynchronously
             loop = asyncio.get_event_loop()
-            data = await loop.run_in_executor(None, lambda: ytdl.extract_info(link, download=False))
-            
+            data = await loop.run_in_executor(
+                None, lambda: ytdl.extract_info(link, download=False))
+
             # Validate the retrieved song URL
             if 'url' not in data:
                 await ctx.send("Unable to retrieve the song URL.")
                 return
-            
+
             song = data['url']
             song_title = data['title']
             await ctx.send(f"Now playing: {song_title}")
             print(f"Now playing: {song_title}")
-            
+
             # Play the audio
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
             voice_channel.play(player)
@@ -164,9 +172,9 @@ class Songs(commands.Cog):
 
         except Exception as e:
             # Generic error handling, providing a more detailed message
-            await ctx.send(f"An error occurred while trying to play the song: {str(e)}")
+            await ctx.send(
+                f"An error occurred while trying to play the song: {str(e)}")
             print(f"Error in play_song(): {e}")
-
 
     """
     Helper function to handle empty song queue
@@ -196,12 +204,12 @@ class Songs(commands.Cog):
         if empty_queue:
             await ctx.send("The queue is empty.")
             return
-        
+
         if voice_client.is_playing():
             voice_client.pause()
         # print(self.songs_queue) # temp remove
         print("!")
-                  
+
         # next_song = self.songs_queue.queue.next_song()
         next_song = self.songs_queue.next_song()
         # print(next_song)
@@ -210,10 +218,9 @@ class Songs(commands.Cog):
             return
         # if next_song is not None:
         #     print(next_song)
-        
+
         await ctx.send("Playing the next song now ... ")
         await self.play_song(ctx, next_song)
-
 
     """
     Function to play the previous song in the queue
@@ -231,13 +238,13 @@ class Songs(commands.Cog):
     """
 
     @commands.command(name='pause', help='This command pauses the song')
-    
     @has_role_dj()
     async def pause(self, ctx):
         voice_client = ctx.message.guild.voice_client
         if voice_client is None:
 
-            await ctx.send("The bot is not connected to any voice channel at the moment.")
+            await ctx.send(
+                "The bot is not connected to any voice channel at the moment.")
         elif voice_client.is_playing():
             await voice_client.pause()
             await ctx.send("The song is paused now.")
@@ -247,7 +254,9 @@ class Songs(commands.Cog):
     """
     Function to jump to a specific song in the queue
     """
-    @commands.command(name="jump_to", help="Jump to a specific song in the queue")
+
+    @commands.command(name="jump_to",
+                      help="Jump to a specific song in the queue")
     @has_role_dj()
     async def jump_to(self, ctx, *, song_name: str):
         empty_queue = await self.handle_empty_queue(ctx)
@@ -255,7 +264,7 @@ class Songs(commands.Cog):
             return
 
         jumped_song = self.songs_queue.jump_to_song(song_name)
-    
+
         if jumped_song is None:
             await ctx.send(f"Song '{song_name}' not found in the queue.")
             return
@@ -268,7 +277,6 @@ class Songs(commands.Cog):
         # Play the selected song
         await ctx.send(f"Jumping to: {jumped_song}")
         await self.play_song(ctx, jumped_song)
-
 
     """
     Function to generate poll for playing the recommendations
@@ -285,21 +293,23 @@ class Songs(commands.Cog):
         bot_message = "Select song preferences by reaction '👍' or '👎' to the choices. \nSelect 3 songs"
         await ctx.send(bot_message)
         ten_random_songs = random_25()
-        for ele in zip(ten_random_songs["track_name"], ten_random_songs["artist"]):
+        for ele in zip(ten_random_songs["track_name"],
+                       ten_random_songs["artist"]):
             bot_message = str(ele[0]) + " By " + str(ele[1])
             description = []
-            poll_embed = discord.Embed(
-                title=bot_message, color=0x31FF00, description="".join(description)
-            )
+            poll_embed = discord.Embed(title=bot_message,
+                                       color=0x31FF00,
+                                       description="".join(description))
             react_message = await ctx.send(embed=poll_embed)
-            for reaction in reactions[: len(reactions)]:
+            for reaction in reactions[:len(reactions)]:
                 await react_message.add_reaction(reaction)
             res, user = await self.bot.wait_for("reaction_add")
             if res.emoji == "👍":
                 selected_songs.append(str(ele[0]))
                 count += 1
             if count == 3:
-                bot_message = "Selected songs are : " + " , ".join(selected_songs)
+                bot_message = "Selected songs are : " + " , ".join(
+                    selected_songs)
                 await ctx.send(bot_message)
                 break
         recommended_songs = recommend(selected_songs)
@@ -308,12 +318,12 @@ class Songs(commands.Cog):
         await self.play_song(ctx, self.songs_queue.next_song())
         # await self.play_song(self.songs_queue.next_song(), ctx)
 
-
     """
     Function to display all the songs in the queue
     """
 
-    @commands.command(name="queue", help="Show active queue of recommendations")
+    @commands.command(name="queue",
+                      help="Show active queue of recommendations")
     @has_role_dj()
     async def queue(self, ctx):
         empty_queue = await self.handle_empty_queue(ctx)
@@ -351,13 +361,13 @@ class Songs(commands.Cog):
         song_name = user_message.split(" ", 1)[1]
         self.songs_queue.add_to_queue(song_name)
         await ctx.send("Song added to queue")
-     
-       
 
     """
     Recommending songs based on genre
     """
-    @commands.command(name="genre", help="To play 5 unique songs from the specified genre")
+
+    @commands.command(name="genre",
+                      help="To play 5 unique songs from the specified genre")
     async def play_song_genre(self, ctx, *, genre_name):
         try:
             server = ctx.message.guild
@@ -374,8 +384,10 @@ class Songs(commands.Cog):
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 search_query = f"ytsearch5:{genre_name} music"
-                info = await asyncio.get_event_loop().run_in_executor(None, lambda: ydl.extract_info(search_query, download=False))
-                
+                info = await asyncio.get_event_loop().run_in_executor(
+                    None,
+                    lambda: ydl.extract_info(search_query, download=False))
+
                 if 'entries' in info:
                     for entry in info['entries']:
                         if len(selected_songs) >= 5:
@@ -386,7 +398,9 @@ class Songs(commands.Cog):
                             url_list.append(entry['webpage_url'])
 
             if len(selected_songs) < 5:
-                await ctx.send(f"Could only find {len(selected_songs)} unique songs for the genre '{genre_name}'.")
+                await ctx.send(
+                    f"Could only find {len(selected_songs)} unique songs for the genre '{genre_name}'."
+                )
 
             await ctx.send("Playing songs:")
             for song in selected_songs:
@@ -401,25 +415,25 @@ class Songs(commands.Cog):
         except Exception as e:
             await ctx.send(f"An error occurred: {str(e)}")
 
-
     """
     Function to play the current song from the queue
     """
+
     @commands.command(name='play', help="Resume playing from queue")
     @has_role_dj()
     async def play(self, ctx):
         voice_client = ctx.message.guild.voice_client
-        user_message = str(ctx.message.content) # 
-        match = re.search(r"\]play\s*(.+)", user_message) #
+        user_message = str(ctx.message.content)  #
+        match = re.search(r"\]play\s*(.+)", user_message)  #
         if match is None:
             song_name = ""
         else:
-            song_name = match.group(1) # 
+            song_name = match.group(1)  #
         # song_name = user_message.split(' ', 1)[1]
         if voice_client is None:
             await ctx.send("The bot is not connected to any voice channel.")
             return
-    
+
         if song_name is None or song_name == "":
             try:
                 index = self.songs_queue.current_index + 1
@@ -431,23 +445,22 @@ class Songs(commands.Cog):
                 await self.play_song(ctx, song_in_queue)
             except Exception as e:
                 await ctx.send("There are no more songs in the queue")
-                
-            
-        else:    
+
+        else:
             if voice_client.is_playing():
                 voice_client.pause()
                 await self.play_song(ctx, song_name=song_name)
                 return
-        
+
         # if voice_client.is_playing():
         #     await ctx.send("The bot is already playing.")
         #     return
-
-        
 
 
 """
     Function to add the cog to the bot
 """
+
+
 async def setup(client):
     await client.add_cog(Songs(client))

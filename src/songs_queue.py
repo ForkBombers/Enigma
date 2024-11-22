@@ -2,7 +2,9 @@ import json
 import os
 from random import shuffle
 
+
 class Songs_Queue:
+
     def __init__(self, song_names=None):
         self.file_path = "songs_queue.json"
         if song_names is not None:
@@ -79,13 +81,13 @@ class Songs_Queue:
             self.save_to_json()
         else:
             raise IndexError("Index out of range")
-        
+
     def get_song_at_index(self, index):
         if 0 <= index < len(self.queue):
             return self.queue[index]
         else:
             return None
-        
+
     def jump_to_song(self, song_name):
         for i, song in enumerate(self.queue):
             if song_name.lower() in song.lower():
@@ -94,9 +96,8 @@ class Songs_Queue:
                 self.save_to_json()
                 return song
         return None
-    
+
     def get_current_song(self):
         if 0 <= self.current_index < len(self.queue):
             return self.queue[self.current_index]
         return None
-
