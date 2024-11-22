@@ -94,4 +94,9 @@ class Songs_Queue:
                 self.save_to_json()
                 return song
         return None
+    
+    def get_current_song(self):
+        if 0 <= self.current_index < len(self.queue):
+            return self.queue[self.current_index]
+        return None
 
