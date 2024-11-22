@@ -158,6 +158,10 @@ class Songs(commands.Cog):
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
             voice_channel.play(player)
 
+            # After successfully playing the song, update the current_index
+            self.songs_queue.current_index = self.songs_queue.index - 1
+            self.songs_queue.save_to_json()
+
         except Exception as e:
             # Generic error handling, providing a more detailed message
             await ctx.send(f"An error occurred while trying to play the song: {str(e)}")
