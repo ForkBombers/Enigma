@@ -55,7 +55,7 @@ class Songs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.songs_queue = Songs_Queue([])
-        self.loop = False # New loop variable to keep track of loop status
+        self.loop = False  # New loop variable to keep track of loop status
 
     # """
     # Function for playing a song
