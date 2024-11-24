@@ -361,7 +361,7 @@ class Songs(commands.Cog):
         song_name = user_message.split(" ", 1)[1]
         is_first_song = self.songs_queue.add_to_queue(song_name)
         await ctx.send("Song added to queue")
-        
+
         if is_first_song:
             await ctx.send(f"Now playing: {song_name}")
             await self.play_song(ctx, song_name)
