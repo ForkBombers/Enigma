@@ -55,6 +55,7 @@ class Songs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.songs_queue = Songs_Queue([])
+        self.loop = False # New loop variable to keep track of loop status
 
     # """
     # Function for playing a song
@@ -131,6 +132,10 @@ class Songs(commands.Cog):
             if voice_channel.is_playing():
                 voice_channel.stop()
 
+            # If loop is enabled, replay the same song
+            if self.loop and self.current_song:
+                song_name = self.current_song
+
             # Check if song_name is a YouTube URL; otherwise, perform a search
             if youtube_base_url not in song_name:
                 query_string = urllib.parse.urlencode(
@@ -159,12 +164,14 @@ class Songs(commands.Cog):
 
             song = data['url']
             song_title = data['title']
+            self.current_song = song_name  # Store the current song for looping
             await ctx.send(f"Now playing: {song_title}")
             print(f"Now playing: {song_title}")
 
             # Play the audio
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
-            voice_channel.play(player)
+            ##voice_channel.play(player)
+            voice_channel.play(player, after=lambda e: self.after_play(ctx))
 
             # After successfully playing the song, update the current_index
             self.songs_queue.current_index = self.songs_queue.index
