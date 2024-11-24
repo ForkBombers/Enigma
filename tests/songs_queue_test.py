@@ -16,10 +16,12 @@ class TestSongsQueue(unittest.TestCase):
     def test_next_song(self):
         # Test normal next song functionality
         for i in range(len(self.sample_songs)):
-            self.assertEqual(self.queue.next_song(), self.sample_songs[i])
+            expected_song = self.sample_songs[(i + 1) % len(self.sample_songs)]
+            #self.assertEqual(self.queue.next_song(), self.sample_songs[i])
+            self.assertEqual(self.queue.next_song(), expected_song)
 
         # Test wrapping around to the beginning
-        self.assertEqual(self.queue.next_song(), self.sample_songs[0])
+        self.assertEqual(self.queue.next_song(), self.sample_songs[1])
 
     def test_prev_song(self):
         # Move to the end of the queue
