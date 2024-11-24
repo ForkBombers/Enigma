@@ -167,7 +167,7 @@ class Songs(commands.Cog):
             voice_channel.play(player)
 
             # After successfully playing the song, update the current_index
-            self.songs_queue.current_index = self.songs_queue.index - 1
+            self.songs_queue.current_index = self.songs_queue.index
             self.songs_queue.save_to_json()
 
         except Exception as e:
