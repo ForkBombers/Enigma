@@ -166,6 +166,10 @@ class Songs(commands.Cog):
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
             voice_channel.play(player)
 
+            # After successfully playing the song, update the current_index
+            self.songs_queue.current_index = self.songs_queue.index
+            self.songs_queue.save_to_json()
+
         except Exception as e:
             # Generic error handling, providing a more detailed message
             await ctx.send(
@@ -248,6 +252,33 @@ class Songs(commands.Cog):
             await ctx.send("The bot is not playing anything at the moment.")
 
     """
+    Function to jump to a specific song in the queue
+    """
+
+    @commands.command(name="jump_to",
+                      help="Jump to a specific song in the queue")
+    @has_role_dj()
+    async def jump_to(self, ctx, *, song_name: str):
+        empty_queue = await self.handle_empty_queue(ctx)
+        if empty_queue:
+            return
+
+        jumped_song = self.songs_queue.jump_to_song(song_name)
+
+        if jumped_song is None:
+            await ctx.send(f"Song '{song_name}' not found in the queue.")
+            return
+
+        # Stop the current song if it's playing
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
+
+        # Play the selected song
+        await ctx.send(f"Jumping to: {jumped_song}")
+        await self.play_song(ctx, jumped_song)
+
+    """
     Function to generate poll for playing the recommendations
     """
 
@@ -328,8 +359,12 @@ class Songs(commands.Cog):
     async def add_song(self, ctx):
         user_message = str(ctx.message.content)
         song_name = user_message.split(" ", 1)[1]
-        self.songs_queue.add_to_queue(song_name)
+        is_first_song = self.songs_queue.add_to_queue(song_name)
         await ctx.send("Song added to queue")
+
+        if is_first_song:
+            await ctx.send(f"Now playing: {song_name}")
+            await self.play_song(ctx, song_name)
 
     """
     Recommending songs based on genre

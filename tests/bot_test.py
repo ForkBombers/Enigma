@@ -3,6 +3,7 @@ from unittest.mock import AsyncMock, patch
 import sys
 import re
 from discord.ext.commands import CheckFailure
+from bot import VOICE_CHANNEL_ID
 
 sys.path.append("../")
 from bot import client, authorized_channels
