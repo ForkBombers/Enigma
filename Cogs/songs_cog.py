@@ -184,6 +184,19 @@ class Songs(commands.Cog):
             print(f"Error in play_song(): {e}")
 
     """
+    Helper function to check if the song should be replayed
+    """
+
+    def after_play(self, ctx):
+        if self.loop and self.current_song:
+            coro = self.play_song(ctx, self.current_song)
+            asyncio.run_coroutine_threadsafe(coro, self.bot.loop)
+        else:
+            # If not looping, play the next song in the queue
+            coro = self.next_song(ctx)
+            asyncio.run_coroutine_threadsafe(coro, self.bot.loop)
+
+    """
     Helper function to handle empty song queue
     """
 
