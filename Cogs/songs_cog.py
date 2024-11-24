@@ -475,6 +475,29 @@ class Songs(commands.Cog):
                 voice_client.pause()
                 await self.play_song(ctx, song_name=song_name)
                 return
+  
+    """
+    Function to loop the current song from the queue
+    """
+
+    @commands.command(name="loop", help="Toggle loop for the current song")
+    @has_role_dj()
+    async def loop(self, ctx):
+        self.loop = not self.loop  # Toggle loop status
+        status = "enabled" if self.loop else "disabled"
+        await ctx.send(f"Loop is now {status}.")
+
+    """
+    Function to replay the current song from the queue
+    """
+    
+    @commands.command(name="replay", help="Replay the current song")
+    @has_role_dj()
+    async def replay(self, ctx):
+        if self.current_song:
+            await self.play_song(ctx, self.current_song)
+        else:
+            await ctx.send("No song is currently playing.")
 
         # if voice_client.is_playing():
         #     await ctx.send("The bot is already playing.")
