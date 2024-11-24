@@ -6,7 +6,7 @@ This file is responsible for all bot commands regarding songs such ]poll for gen
 import discord
 from dotenv import load_dotenv
 from discord.ext import commands
-import youtube_dl
+#import youtube_dl
 import yt_dlp
 import asyncio
 import sys
