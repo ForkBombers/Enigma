@@ -46,7 +46,7 @@ class TestSongsQueue(unittest.TestCase):
         returned_queue, current_index = self.queue.return_queue()
         self.assertEqual(
             current_index,
-            0)  # Because next_song() updates current_index after returning
+            1)  # Because next_song() updates current_index after returning
 
     def test_shuffle_queue(self):
         original_queue = self.queue.queue.copy()

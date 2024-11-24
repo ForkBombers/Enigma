@@ -50,12 +50,21 @@ class Songs_Queue:
     def next_song(self):
         if not self.queue:
             return None
-        self.index += 1
-        if self.index >= len(self.queue):
-            self.index = 0
+        song = self.queue[self.index]
+        self.index = (self.index + 1) % len(self.queue)
         self.current_index = self.index
         self.save_to_json()
-        return self.queue[self.index]
+        return song
+
+    # def next_song(self):
+    #     if not self.queue:
+    #         return None
+    #     self.index += 1
+    #     if self.index >= len(self.queue):
+    #         self.index = 0
+    #     self.current_index = self.index
+    #     self.save_to_json()
+    #     return self.queue[self.index]
 
     def prev_song(self):
         if not self.queue:
