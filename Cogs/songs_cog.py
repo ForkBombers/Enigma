@@ -475,7 +475,7 @@ class Songs(commands.Cog):
                 voice_client.pause()
                 await self.play_song(ctx, song_name=song_name)
                 return
-  
+
     """
     Function to loop the current song from the queue
     """
@@ -490,7 +490,7 @@ class Songs(commands.Cog):
     """
     Function to replay the current song from the queue
     """
-    
+
     @commands.command(name="replay", help="Replay the current song")
     @has_role_dj()
     async def replay(self, ctx):
