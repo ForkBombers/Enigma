@@ -7,9 +7,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           ref: ${{ github.head_ref }}
-      - name: autoyapf
-        id: autoyapf
-        uses: mritunjaysharma394/autoyapf@v2
+      - name: Format Python code with YAPF
+        id: automated-yapf
+        uses: KaustubhAs/automated-yapf-action@v1
         with:
           args: --style pep8 --recursive --in-place .
       - name: Check for modified files
