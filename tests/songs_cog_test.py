@@ -63,8 +63,9 @@ async def test_play_song_youtube_link(songs_cog):
     # Mocking yt_dlp
     with patch('yt_dlp.YoutubeDL.extract_info') as mock_extract:
         mock_extract.return_value = {"url": "test_url", "title": "test_title"}
-        
-        await songs_cog.play_song(ctx_mock, "https://youtube.com/watch?v=test123")
+
+        await songs_cog.play_song(ctx_mock,
+                                  "https://youtube.com/watch?v=test123")
 
         mock_extract.assert_called_once()
         ctx_mock.send.assert_called_with("Now playing: test_title")
@@ -91,7 +92,8 @@ async def test_next_song_empty_queue(songs_cog):
 
     assert ctx_mock.send.call_count == 2
     calls = ctx_mock.send.call_args_list
-    assert "No recommendations present. First generate recommendations using ]poll" in calls[0][0][0]
+    assert "No recommendations present. First generate recommendations using ]poll" in calls[
+        0][0][0]
     assert "The queue is empty." in calls[1][0][0]
 
 
@@ -99,22 +101,25 @@ async def test_next_song_empty_queue(songs_cog):
 async def test_play_not_connected(songs_cog):
     ctx_mock = AsyncMock()
     ctx_mock.message.guild.voice_client = None
-    
+
     # Directly call the method, passing ctx_mock as the first argument
     await songs_cog.play.callback(songs_cog, ctx_mock)
-    
+
     ctx_mock.send.assert_called_once()
-    assert "The bot is not connected to any voice channel" in ctx_mock.send.call_args[0][0]
+    assert "The bot is not connected to any voice channel" in ctx_mock.send.call_args[
+        0][0]
 
 
 @pytest.mark.asyncio
 async def test_jump_to_empty_queue(songs_cog):
     songs_cog.songs_queue.queue = []
     ctx_mock = AsyncMock()
-    
+
     # Directly call the method, passing ctx_mock as the first argument
-    await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="Test Song")
-    
+    await songs_cog.jump_to.callback(songs_cog,
+                                     ctx_mock,
+                                     song_name="Test Song")
+
     ctx_mock.send.assert_called_once()
     assert "No recommendations present" in ctx_mock.send.call_args[0][0]
 
@@ -129,11 +134,16 @@ async def test_jump_empty_queue(songs_cog):
     songs_cog.songs_queue = Songs_Queue([])
 
     # Access the command's callback
-    await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="some_song")
+    await songs_cog.jump_to.callback(songs_cog,
+                                     ctx_mock,
+                                     song_name="some_song")
 
-    ctx_mock.send.assert_called_with("No recommendations present. First generate recommendations using ]poll")
+    ctx_mock.send.assert_called_with(
+        "No recommendations present. First generate recommendations using ]poll"
+    )
     assert songs_cog.songs_queue.get_len() == 0  # Check if the queue is empty
-    assert songs_cog.songs_queue.queue == []  # Check if the internal queue list is empty
+    assert songs_cog.songs_queue.queue == [
+    ]  # Check if the internal queue list is empty
 
 
 @pytest.mark.asyncio
@@ -144,7 +154,8 @@ async def test_jump_non_numeric_position(songs_cog):
 
     songs_cog.songs_queue = Songs_Queue(["song1", "song2", "song3", "song4"])
 
-    await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="abc")  # Non-numeric input
+    await songs_cog.jump_to.callback(songs_cog, ctx_mock,
+                                     song_name="abc")  # Non-numeric input
     ctx_mock.send.assert_called_with("Song 'abc' not found in the queue.")
 
 # @pytest.mark.asyncio
@@ -166,5 +177,8 @@ async def test_jump_to_invalid_position(songs_cog):
 
     songs_cog.songs_queue = Songs_Queue(["song1", "song2", "song3", "song4"])
 
-    await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="invalid_song")  # Invalid index
-    ctx_mock.send.assert_called_with("Song 'invalid_song' not found in the queue.")
+    await songs_cog.jump_to.callback(songs_cog,
+                                     ctx_mock,
+                                     song_name="invalid_song")  # Invalid index
+    ctx_mock.send.assert_called_with(
+        "Song 'invalid_song' not found in the queue.")

@@ -63,7 +63,6 @@ class TestSongsQueue(unittest.TestCase):
         self.assertEqual(self.queue.get_len(), original_length + 1)
         self.assertEqual(self.queue.queue[-1], new_song)
 
-
     def test_jump_to_song(self):
         self.assertEqual(self.queue.jump_to_song("Song C"), "Song C")
         self.assertEqual(self.queue.index, 2)
@@ -97,10 +96,10 @@ class TestSongsQueue(unittest.TestCase):
         original_queue = self.queue.queue.copy()
         original_index = self.queue.index
         original_current_index = self.queue.current_index
-    
+
         self.queue.save_to_json()
         new_queue = Songs_Queue()  # This should load from the JSON file
-    
+
         self.assertEqual(new_queue.queue, original_queue)
         self.assertEqual(new_queue.index, original_index)
         self.assertEqual(new_queue.current_index, original_current_index)
