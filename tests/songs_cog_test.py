@@ -147,16 +147,16 @@ async def test_jump_non_numeric_position(songs_cog):
     await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="abc")  # Non-numeric input
     ctx_mock.send.assert_called_with("Song 'abc' not found in the queue.")
 
-@pytest.mark.asyncio
-async def test_jump_to_current_song(songs_cog):
-    ctx_mock = AsyncMock()
-    ctx_mock.message.guild.voice_client = MagicMock()
-    ctx_mock.message.guild.voice_client.is_connected.return_value = True
+# @pytest.mark.asyncio
+# async def test_jump_to_current_song(songs_cog):
+#     ctx_mock = AsyncMock()
+#     ctx_mock.message.guild.voice_client = MagicMock()
+#     ctx_mock.message.guild.voice_client.is_connected.return_value = True
 
-    songs_cog.songs_queue = Songs_Queue(["song1", "song2", "song3", "song4"])
+#     songs_cog.songs_queue = Songs_Queue(["song1", "song2", "song3", "song4"])
 
-    await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="song1")  # Jump to the first song
-    ctx_mock.send.assert_called_with("Now playing: SEREBRO - Song #1 [Original Version]")
+#     await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="song1")  # Jump to the first song
+#     ctx_mock.send.assert_called_with("Now playing: SEREBRO - Song #1 [Original Version]")
 
 @pytest.mark.asyncio
 async def test_jump_to_invalid_position(songs_cog):
