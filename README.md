@@ -15,6 +15,7 @@
 [![GitHub contributors](https://img.shields.io/badge/contributors-3-green)](https://github.com/ForkBombers/Enigma#--contributors--)
 [![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues?q=is%3Aopen+is%3Aissue)
 [![Pull Requests](https://img.shields.io/badge/pull%20requests-0-yellow)](https://github.com/ForkBombers/Enigma/pulls)
+[![YAPF](https://img.shields.io/badge/code%20style-yapf-ff69b4)](https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/code-formatter.yml)
 ![Supports Python](https://img.shields.io/pypi/pyversions/pytest)
 [![Formatting python code](https://github.com/ForkBombers/Enigma/actions/workflows/code-formatter.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions/workflows/code-formatter.yml)
 [![codecov](https://codecov.io/gh/rahulgautam21/Enigma/branch/main/graph/badge.svg?token=OEPEJ0W8CR)](https://codecov.io/gh/rahulgautam21/Enigma)
