@@ -158,6 +158,7 @@ async def test_jump_non_numeric_position(songs_cog):
                                      song_name="abc")  # Non-numeric input
     ctx_mock.send.assert_called_with("Song 'abc' not found in the queue.")
 
+
 # @pytest.mark.asyncio
 # async def test_jump_to_current_song(songs_cog):
 #     ctx_mock = AsyncMock()
@@ -168,6 +169,7 @@ async def test_jump_non_numeric_position(songs_cog):
 
 #     await songs_cog.jump_to.callback(songs_cog, ctx_mock, song_name="song1")  # Jump to the first song
 #     ctx_mock.send.assert_called_with("Now playing: SEREBRO - Song #1 [Original Version]")
+
 
 @pytest.mark.asyncio
 async def test_jump_to_invalid_position(songs_cog):
