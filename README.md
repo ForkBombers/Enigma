@@ -147,9 +147,9 @@ Documentation for the code available at - <a href="https://saswat123.github.io/E
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/rohit-sram"><img src="https://avatars.githubusercontent.com/u/58294503?v=4" width="75px;" alt=""/><br /><sub><b>Rohit Sriram</b></sub></a></td>
-    <td align="center"><a href="https://github.com/RandomOscillations"><img src="https://avatars.githubusercontent.com/u/118115384?v=4" width="75px;" alt=""/><br /><sub><b>Adithya Srinivasan</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/veera2508"><img src="https://avatars.githubusercontent.com/u/52314413?v=4" width="75px;" alt=""/><br /><sub><b>Veeraraghavan Narasimhan</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/KaustubhAs"><img src="https://avatars.githubusercontent.com/u/58294503?v=4" width="75px;" alt=""/><br /><sub><b>Kaustubh Sonawane</b></sub></a></td>
+    <td align="center"><a href="https://github.com/iamNikitaC"><img src="https://avatars.githubusercontent.com/u/87129562?v=4" width="75px;" alt=""/><br /><sub><b>Nikita Chaudhari</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/tejasdesai27"><img src="https://avatars.githubusercontent.com/u/139948226?v=4" width="75px;" alt=""/><br /><sub><b>Tejas Desai</b></sub></a><br /></td>
   </tr>
 
 </table>
