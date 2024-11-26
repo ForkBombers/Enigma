@@ -40,7 +40,7 @@ href="https://github.com/ForkBombers/Enigma/graphs/contributors?from=9%2F28%2F20
 <td>Number of commits</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main"><u>https://github.com/ForkBombers/Enigma/tree/main</u></a></td>
 </tr>
 <tr class="odd">
 <td>Number of commits: by different people</td>
@@ -64,20 +64,20 @@ href="https://github.com/ForkBombers/Enigma/issues?q=is%3Aissue+is%3Aclosed"><u>
 <td>*DOI badge: exists</td>
 <td>3</td>
 <td><a
-href="https://doi.org/10.5281/zenodo.10023318"><u>https://doi.org/10.5281/zenodo.10023318</u></a></td>
+href="https://doi.org/10.5281/zenodo.14226015"><u>https://doi.org/10.5281/zenodo.14226015</u></a></td>
 </tr>
 <tr class="odd">
 <td>Docs: doco generated, format not ugly</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Docs: what: point descriptions of each class/function (in
 isolation)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Docs: how: for common use cases X,Y,Z mini-tutorials showing worked
@@ -91,7 +91,7 @@ href=""><u></u></a></td>
 punchline that makes you want to rush out and use the thing</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Docs: short video, animated, hosted on your repo. That convinces
@@ -109,25 +109,27 @@ href=""><u></u></a></td>
 <td>Use of style checkers</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Style_Checker_and_Prettify_Code.yml"><u>https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Style_Checker_and_Prettify_Code.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml
+"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml</u></a></td>
 </tr>
 <tr class="even">
 <td>Use of code formatters.</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml"><u>hhttps://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/Code_Formatter.yml"><u>hhttps://github.com/ForkBombers/Enigma/blob/main/.github/workflows/Code_Formatter.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Use of syntax checkers.</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml"><u>https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml
+"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml</u></a></td>
 </tr>
 <tr class="even">
 <td>*Use of code coverage</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/coverage.yml"><u>https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/coverage.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/coverage.yml"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/coverage.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Other automated analysis tools</td>
@@ -139,7 +141,7 @@ href="https://github.com/ForkBombers/Enigma/actions"><u>https://github.com/ForkB
 <td>*Test cases exist</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master/test"><u>https://github.com/ForkBombers/Enigma/tree/master/test</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main/tests"><u>https://github.com/ForkBombers/Enigma/tree/main/tests</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Test cases are routinely executed</td>
@@ -152,7 +154,7 @@ href=""><u></u></a></td>
 how to extend the system without screwing things up</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Issues are discussed before they are closed</td>
@@ -177,14 +179,14 @@ failing cases.</td>
 get to all tools and files</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Evidence that the whole team is using the same tools (e.g. config
 files in the repo, updated by lots of different people)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main"><u>https://github.com/ForkBombers/Enigma/tree/main</u></a></td>
 </tr>
 <tr class="even">
 <td>Evidence that the whole team is using the same tools (e.g. tutor can
@@ -192,14 +194,14 @@ ask anyone to share screen, they demonstrate the system running on their
 computer)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master each contributer had access to repository, tools and files</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main"><u>https://github.com/ForkBombers/Enigma/tree/main each contributer had access to repository, tools and files</u></a></td>
 </tr>
 <tr class="odd">
 <td>Evidence that the members of the team are working across multiple
 places in the code base</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main"><u>https://github.com/ForkBombers/Enigma/tree/main</u></a></td>
 </tr>
 <tr class="even">
 <td>Short release cycles</td>
@@ -212,14 +214,14 @@ href="https://github.com/ForkBombers/Enigma/releases"><u>https://github.com/Fork
 overview of your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Does the website and documentation clearly describe the type of user
 who should use your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Are there any case studies to show how the software has been used by
@@ -236,7 +238,7 @@ developers and others?</td>
 <td>Is the project/software name free from trademark violations?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/main/LICENSE</u></a></td>
 </tr>
 <tr class="even">
 <td>Is the software available as a package that can be deployed without
@@ -248,7 +250,7 @@ building it?</td>
 <td>Is your software available for free?</td>
 <td>3</td>
 <td><a
-href="hhttps://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a></td>
+href="hhttps://github.com/ForkBombers/Enigma/blob/main/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/main/LICENSE</u></a></td>
 </tr>
 <tr class="even">
 <td>Is the source code publicly available to download, either as a
@@ -270,7 +272,7 @@ href="https://github.com/ForkBombers/Enigma"><u>https://github.com/ForkBombers/E
 your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does the documentation include a "quick start" guide, that provides
@@ -278,14 +280,15 @@ a short overview of how to use your software with some basic examples of
 use?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md#installation"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md#installation</u></a></td>
+href="https://github.com/ForkBombers/Enigma#-%EF%B8%8F-installation-procedure-"><u>https://github.com/ForkBombers/Enigma#-%EF%B8%8F-installation-procedure</u></a></td>
 </tr>
 <tr class="even">
 <td>If you provide more extensive documentation, does this provide
 clear, step-by-step instructions on how to deploy and use your
 software?</td>
-<td>0</td>
-<td></td>
+<td>2</td>
+<td><a
+href="https://github.com/ForkBombers/Enigma#-%EF%B8%8F-installation-procedure-"><u>https://github.com/ForkBombers/Enigma#-%EF%B8%8F-installation-procedure</u></a></td>
 </tr>
 <tr class="odd">
 <td>Is there a comprehensive guide to all your software’s commands,
@@ -326,21 +329,21 @@ href="https://github.com/ForkBombers/Enigma/releases"><u>https://github.com/Fork
 software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master#readme"><u>https://github.com/ForkBombers/Enigma/tree/master#readme</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main#readme"><u>https://github.com/ForkBombers/Enigma/tree/main#readme</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does your website and documentation describe what support, if any,
 you provide to users and developers?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support"><u>https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support</u></a></td>
+href="https://github.com/ForkBombers/Enigma#-support-"><u>https://github.com/ForkBombers/Enigma#-support-</u></a></td>
 </tr>
 <tr class="even">
 <td>Does your project have an e-mail address or forum that is solely for
 supporting users?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support"><u>https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support</u></a></td>
+href="https://github.com/ForkBombers/Enigma#-support-"><u>https://github.com/ForkBombers/Enigma#-support-</u></a></td>
 </tr>
 <tr class="odd">
 <td>Are e-mails to your support e-mail address received by more than one
@@ -383,8 +386,7 @@ using open data formats?<br />
 e.g. GIF, SVG, HTML, XML, tar, zip, CSV, JSON, NetCDF,<br />
 or domain specific ones.</td>
 <td>3</td>
-<td>Since it is a web based project it takes and sends data through HTTP
-protocol.</td>
+<td>Since it is a Discord bot it takes and sends data through JSON Query.</td>
 </tr>
 <tr class="even">
 <td>Does your software allow communications using open<br />
@@ -392,8 +394,7 @@ communications protocols?<br />
 e.g. HTTP, FTP, XMPP, SOAP over HTTP, or<br />
 domain-specific ones</td>
 <td>3</td>
-<td>Since it is a web based project it takes and sends data through HTTP
-protocol.</td>
+<td>Since it is a Discord bot it takes and sends data through JSON Query, and downloads data using API</td>
 </tr>
 <tr class="odd">
 <td>Is your software cross-platform compatible?<br />
@@ -401,10 +402,7 @@ e.g. does it run under two or more of Windows, Unix/Linux<br />
 and Mac OS X, or can be used from within two or more of<br />
 Internet Explorer, Chrome, Firefox and Safari?</td>
 <td>3</td>
-<td>Yes, the project is cross-platform compatible since it uses Python language <br />
-and JavaScript which can be installed on any platform and can be run on any system. <br />
-Additionally, if Docker is used for deployment, this further ensures cross-platform <br />
-compatibility by allowing the application to run consistently across different environments.</td>
+<td>Yes, the project is cross-platform compatible since it uses Python language</td>
 </tr>
 <tr class="even">
 <td>Does your software adhere to appropriate accessibility<br />
@@ -456,7 +454,7 @@ href="https://zenodo.org/record/10023318"><u>https://zenodo.org/record/10023318<
 your software from the source code?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma?tab=readme-ov-file#installation"><u>https://github.com/ForkBombers/Enigma?tab=readme-ov-file#installation</u></a></td>
+href="https://github.com/ForkBombers/Enigma#-%EF%B8%8F-installation-procedure-"><u>https://github.com/ForkBombers/Enigma#-%EF%B8%8F-installation-procedure-</u></a></td>
 </tr>
 <tr class="even">
 <td>Can you build, or package, your software using an<br />
@@ -470,22 +468,22 @@ Maven (https://maven.apache.org/)</td>
 <tr class="odd">
 <td>Do you provide publicly-available instructions for deploying<br />
 your software?</td>
-<td>2</td>
+<td>3</td>
 <td><a
 href="https://github.com/ForkBombers/Enigma?tab=readme-ov-file#project-setup-steps"><u>https://github.com/ForkBombers/Enigma?tab=readme-ov-file#project-setup-steps</u></a></td>
 </tr>
 <tr class="even">
 <td>*Does your documentation list all third-party dependencies?</td>
-<td>1</td>
+<td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/requirements.txt"><u>https://github.com/ForkBombers/Enigma/blob/master/requirements.txt</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/requirements.txt"><u>https://github.com/ForkBombers/Enigma/blob/main/requirements.txt</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Does your documentation list the version number for all<br />
 third-party dependencies?</td>
-<td>1</td>
+<td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/requirements.txt"><u>https://github.com/ForkBombers/Enigma/blob/master/requirements.txt</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/requirements.txt"><u>https://github.com/ForkBombers/Enigma/blob/main/requirements.txt</u></a></td>
 </tr>
 <tr class="even">
 <td>Does your software list the web address, and licences for<br />
@@ -493,7 +491,7 @@ all third-party dependencies and say whether the<br />
 dependencies are mandatory or optional?</td>
 <td>3</td> 
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -508,31 +506,29 @@ been built or deployed to show whether the build or<br />
 deployment has been successful?</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/tree/v2/test"><u>https://github.com/ForkBombers/Enigma/tree/v2/test</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/main/tests"><u>https://github.com/ForkBombers/Enigma/tree/main/tests</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you have an automated test suite for your software?</td>
-<td>0</td>
-<td></td>
+<td>3</td>
+<td><a href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml</u></a></td>
 </tr>
 <tr class="even">
 <td>*Do you have a framework to periodically (e.g. nightly) run<br />
 your tests on the latest version of the source code?</td>
-<td>1</td>
-<td><a
-href="https://github.com/ForkBombers/Enigma/actions/workflows/code_cov.yml"><u>https://github.com/ForkBombers/Enigma/actions/workflows/code_cov.yml</u></a></td>
+<td>2</td>
+<td><a href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you use continuous integration, automatically running<br />
 tests whenever changes are made to your source code?</td>
-<td>0</td>
-<td></td>
+<td>3</td>
+<td><a href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml</u></a></td>
 </tr>
 <tr class="even">
 <td>*Are your test results publicly visible?</td>
-<td>1</td>
-<td><a
-href="https://github.com/ForkBombers/Enigma/tree/v2/test"><u>https://github.com/ForkBombers/Enigma/tree/v2/test</u></a></td>
+<td>3</td>
+<td><a href="https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml"><u>https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/github-actions-build.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Are all manually-run tests documented?</td>
@@ -547,13 +543,14 @@ software?e.g. release announcements, publications,<br />
 workshops, conference presentations</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does your website state how many projects and users are<br />
 associated with your project?</td>
-<td>0</td>
-<td></td>
+<td>2</td>
+<td><a
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md#--contributors--"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md#--contributors--</u></a></td>
 </tr>
 <tr class="even">
 <td>Do you provide success stories on your website?</td>
@@ -565,7 +562,7 @@ associated with your project?</td>
 website?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md#--contributors--"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md#--contributors--</u></a></td>
 </tr>
 <tr class="even">
 <td>Do you list your project's publications on your website or<br />
@@ -591,8 +588,9 @@ source code repository?</td>
 <td>If your software is developed as an open source project<br />
 (and, not just a project developing open source software),<br />
 do you have a governance model?</td>
-<td>0</td>
-<td></td>
+<td>2</td>
+<td><a
+href="https://github.com/ForkBombers/Enigma/blob/main/CODE_OF_CONDUCT.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CODE_OF_CONDUCT.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Do you accept contributions (e.g. bug fixes, enhancements,<br />
@@ -600,32 +598,32 @@ documentation updates, tutorials) from people who are not<br />
 part of your project?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you have a contributions policy?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Is your contributions' policy publicly available?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do contributors keep the copyright/IP of their contributions?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a>E</td>
+href="https://github.com/ForkBombers/Enigma/blob/main/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/main/LICENSE</u></a>E</td>
 </tr>
 <tr class="even">
 <td>Does your website and documentation clearly state the<br />
 copyright owners of your software and documentation?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does each of your source code files include a copyright<br />
@@ -638,18 +636,18 @@ statement?</td>
 licence of your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/main/LICENSE</u></a></td>
 </tr>
 <tr class="odd">
 <td>Is your software released under an open source licence?</td>
 <td>3</td>
-<td>Yes, MIT License is an open source license.</td>
+<td>Yes, GNU GENERAL PUBLIC LICENSE is an open source license.</td>
 </tr>
 <tr class="even">
 <td>Is your software released under an OSI-approved<br />
 open-source licence?</td>
 <td>3</td>
-<td>Yes, MIT License is an OSI-approved open source license.</td>
+<td>Yes, GNU GENERAL PUBLIC LICENSE is an OSI-approved open source license.</td>
 </tr>
 <tr class="odd">
 <td>Does each of your source code files include a licence header?</td>
@@ -660,14 +658,15 @@ open-source licence?</td>
 <td>Do you have a recommended citation for your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Enigma/blob/master/CITATION.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CITATION.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/main/CITATION.md"><u>https://github.com/ForkBombers/Enigma/blob/main/CITATION.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does your website or documentation include a project<br />
 roadmap (a list of project and development milestones<br />
 for the next 3, 6 and 12 months)?</td>
-<td>0</td>
-<td></td>
+<td>2</td>
+<td><a
+href="https://github.com/ForkBombers/Enigma/blob/main/README.md#--roadmap-"><u>https://github.com/ForkBombers/Enigma/blob/main/README.md#--roadmap-</u></a></td>
 </tr>
 <tr class="even">
 <td>Does your website or documentation describe how your<br />

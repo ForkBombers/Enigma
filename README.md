@@ -7,10 +7,10 @@
 <div align="center">
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![DOI](https://zenodo.org/badge/533639670.svg)](https://zenodo.org/badge/latestdoi/533639670)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14226015.svg)](https://doi.org/10.5281/zenodo.14226015)
 [![Build Status](https://github.com/ForkBombers/Enigma/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions)
 [![GitHub Release](https://img.shields.io/github/release/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma/releases)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub contributors](https://img.shields.io/badge/contributors-3-green)](https://github.com/ForkBombers/Enigma#--contributors--)
 [![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues?q=is%3Aopen+is%3Aissue)
@@ -144,7 +144,7 @@ Documentation for the code available at - <a href="https://saswat123.github.io/E
 
 <h1> 👥 Contributors <a name="Contributors"></a> </h1>
 
-### Group 86
+### Group 90
 
 <table>
   <tr>
