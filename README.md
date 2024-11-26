@@ -13,7 +13,7 @@
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub contributors](https://img.shields.io/badge/contributors-4-green)](https://github.com/ForkBombers/Enigma/graphs/contributors)
-[![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues)
+[![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues?q=is%3Aopen+is%3Aissue)
 [![Pull Requests](https://img.shields.io/badge/pull%20requests-0-yellow)](https://github.com/ForkBombers/Enigma/pulls)
 ![Supports Python](https://img.shields.io/pypi/pyversions/pytest)
 [![Formatting python code](https://github.com/ForkBombers/Enigma/actions/workflows/code-formatter.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions/workflows/code-formatter.yml)
