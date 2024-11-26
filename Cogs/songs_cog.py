@@ -6,11 +6,13 @@ This file is responsible for all bot commands regarding songs such ]poll for gen
 import discord
 from dotenv import load_dotenv
 from discord.ext import commands
-import youtube_dl
+#import youtube_dl
 import yt_dlp
 import asyncio
 import sys
 import urllib.parse, urllib.request, re
+from collections import defaultdict
+
 
 from src.get_all import *
 from src.utils import searchSong, random_25, has_role_dj, check_vc_status
@@ -55,6 +57,7 @@ class Songs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.songs_queue = Songs_Queue([])
+        self.user_feedback = defaultdict(lambda: {'liked': [], 'disliked': []})  # Stores feedback for users
 
     # """
     # Function for playing a song
@@ -166,6 +169,10 @@ class Songs(commands.Cog):
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
             voice_channel.play(player)
 
+            # After successfully playing the song, update the current_index
+            self.songs_queue.current_index = self.songs_queue.index
+            self.songs_queue.save_to_json()
+
         except Exception as e:
             # Generic error handling, providing a more detailed message
             await ctx.send(
@@ -248,6 +255,103 @@ class Songs(commands.Cog):
             await ctx.send("The bot is not playing anything at the moment.")
 
     """
+    Function to jump to a specific song in the queue
+    """
+
+    @commands.command(name="jump_to",
+                      help="Jump to a specific song in the queue")
+    @has_role_dj()
+    async def jump_to(self, ctx, *, song_name: str):
+        empty_queue = await self.handle_empty_queue(ctx)
+        if empty_queue:
+            return
+
+        jumped_song = self.songs_queue.jump_to_song(song_name)
+
+        if jumped_song is None:
+            await ctx.send(f"Song '{song_name}' not found in the queue.")
+            return
+
+        # Stop the current song if it's playing
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
+
+        # Play the selected song
+        await ctx.send(f"Jumping to: {jumped_song}")
+        await self.play_song(ctx, jumped_song)
+
+    """
+    Like command to store feedback for songs
+    """
+    @commands.command(name="like", help="Like a song to improve recommendations")
+    async def like(self, ctx):
+        current_song = self.songs_queue.current_song()  # Get the currently playing song
+        if not current_song:
+            await ctx.send("No song is currently playing to like.")
+            return
+
+        # Save the feedback
+        user_id = ctx.author.id
+        if current_song not in self.user_feedback[user_id]['liked']:
+            self.user_feedback[user_id]['liked'].append(current_song)
+            # Optionally, provide feedback to user
+            await ctx.send(f"Liked: {current_song}")
+        
+        # Adjust recommendations based on likes
+        await self.adjust_recommendations(ctx)
+
+    """
+    Dislike command to store feedback for songs
+    """
+    @commands.command(name="dislike", help="Dislike a song to avoid similar ones")
+    async def dislike(self, ctx):
+        current_song = self.songs_queue.current_song()  # Get the currently playing song
+        if not current_song:
+            await ctx.send("No song is currently playing to dislike.")
+            return
+
+        # Save the feedback
+        user_id = ctx.author.id
+        if current_song not in self.user_feedback[user_id]['disliked']:
+            self.user_feedback[user_id]['disliked'].append(current_song)
+            # Optionally, provide feedback to user
+            await ctx.send(f"Disliked: {current_song}")
+        
+        # Adjust recommendations based on dislikes
+        await self.adjust_recommendations(ctx)
+
+    """
+    Function to adjust recommendations based on feedback
+    """
+    async def adjust_recommendations(self, ctx):
+        # Collect liked and disliked songs from all users
+        liked_songs = set()
+        disliked_songs = set()
+        
+        # Collect user feedback
+        for user_id, feedback in self.user_feedback.items():
+            liked_songs.update(feedback['liked'])
+            disliked_songs.update(feedback['disliked'])
+
+        # Recommend songs based on feedback (excluding disliked and favoring liked)
+        all_songs = random_25()  # Or use your existing recommendation function
+        recommended_songs = [song for song in all_songs if song not in disliked_songs]
+        
+        # You can fine-tune this to favor liked songs if necessary
+        if liked_songs:
+            recommended_songs = [song for song in all_songs if song in liked_songs] + recommended_songs
+        
+        # Update the queue
+        self.songs_queue = Songs_Queue(recommended_songs)
+        
+        # Play the next recommended song
+        if recommended_songs:
+            await self.play_song(ctx, self.songs_queue.next_song())
+        else:
+            await ctx.send("No more recommendations based on your feedback.")
+
+    """
     Function to generate poll for playing the recommendations
     """
 
@@ -328,8 +432,12 @@ class Songs(commands.Cog):
     async def add_song(self, ctx):
         user_message = str(ctx.message.content)
         song_name = user_message.split(" ", 1)[1]
-        self.songs_queue.add_to_queue(song_name)
+        is_first_song = self.songs_queue.add_to_queue(song_name)
         await ctx.send("Song added to queue")
+
+        if is_first_song:
+            await ctx.send(f"Now playing: {song_name}")
+            await self.play_song(ctx, song_name)
 
     """
     Recommending songs based on genre
