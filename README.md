@@ -12,7 +12,7 @@
 [![GitHub Release](https://img.shields.io/github/release/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma/releases)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![GitHub contributors](https://img.shields.io/badge/contributors-4-green)](https://github.com/ForkBombers/Enigma/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/badge/contributors-3-green)](https://github.com/ForkBombers/Enigma#--contributors--)
 [![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues?q=is%3Aopen+is%3Aissue)
 [![Pull Requests](https://img.shields.io/badge/pull%20requests-0-yellow)](https://github.com/ForkBombers/Enigma/pulls)
 ![Supports Python](https://img.shields.io/pypi/pyversions/pytest)
