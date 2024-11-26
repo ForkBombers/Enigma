@@ -643,13 +643,13 @@ href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://gith
 <tr class="odd">
 <td>Is your software released under an open source licence?</td>
 <td>3</td>
-<td>Yes, MIT License is an open source license.</td>
+<td>Yes, GNU GENERAL PUBLIC LICENSE is an open source license.</td>
 </tr>
 <tr class="even">
 <td>Is your software released under an OSI-approved<br />
 open-source licence?</td>
 <td>3</td>
-<td>Yes, MIT License is an OSI-approved open source license.</td>
+<td>Yes, GNU GENERAL PUBLIC LICENSE is an OSI-approved open source license.</td>
 </tr>
 <tr class="odd">
 <td>Does each of your source code files include a licence header?</td>
