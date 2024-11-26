@@ -42,7 +42,8 @@ def setup_bot():
 
     @bot.command(
         name='channels',
-        help="Add allowed channels for the bot\n- example: ]channels <channel1>, <channel2>, ..."
+        help=
+        "Add allowed channels for the bot\n- example: ]channels <channel1>, <channel2>, ..."
     )
     @has_role_dj()
     async def authorize_channel(ctx):
@@ -60,7 +61,8 @@ def setup_bot():
                     new_channels.append(tc)
             if new_channels:
                 new_channels_str = ", ".join(new_channels)
-                await ctx.send(f"Added authorized channels: {new_channels_str}")
+                await ctx.send(f"Added authorized channels: {new_channels_str}"
+                               )
             else:
                 await ctx.send(
                     "No new channels added. All channels have been authorized already."
@@ -75,32 +77,44 @@ def setup_bot():
                     f"No new channels added. \nUse format: `]channels <channel1>, <channel2>, ...`"
                 )
 
-    @bot.command(name="feedback", help="Submit feedback for a song (like/dislike)")
+    @bot.command(name="feedback",
+                 help="Submit feedback for a song (like/dislike)")
     async def feedback(ctx, *, song_with_feedback: str):
-        parts = song_with_feedback.rsplit(' ', 1)  # Split only at the last space
+        parts = song_with_feedback.rsplit(' ',
+                                          1)  # Split only at the last space
         if len(parts) != 2:
-            await ctx.send("Invalid format. Use the format: ]feedback <song name> <like/dislike>")
+            await ctx.send(
+                "Invalid format. Use the format: ]feedback <song name> <like/dislike>"
+            )
             return
 
         song_name = parts[0]
         feedback_type = parts[1].strip().lower()
 
-        print(f"Received feedback for song: {song_name}, Feedback Type: {feedback_type}")
+        print(
+            f"Received feedback for song: {song_name}, Feedback Type: {feedback_type}"
+        )
 
         # Check for valid feedback
         if feedback_type not in ['like', 'dislike']:
-            await ctx.send("Invalid feedback type. Please use 'like' or 'dislike'.")
+            await ctx.send(
+                "Invalid feedback type. Please use 'like' or 'dislike'.")
             return
 
         # Get the queue (assuming a global instance of Songs_Queue)
         queue = Songs_Queue()
         queue.add_feedback(song_name, feedback_type)  # Adding feedback
 
-        await ctx.send(f"Feedback '{feedback_type}' for '{song_name}' submitted successfully!")
+        await ctx.send(
+            f"Feedback '{feedback_type}' for '{song_name}' submitted successfully!"
+        )
 
         # Optionally, recommend a new song based on the feedback
-        recommended_songs = recommend([])  # You can replace the empty list with context-specific songs
-        await ctx.send(f"Here are some new recommendations: {', '.join(recommended_songs)}")
+        recommended_songs = recommend(
+            [])  # You can replace the empty list with context-specific songs
+        await ctx.send(
+            f"Here are some new recommendations: {', '.join(recommended_songs)}"
+        )
 
     @bot.event
     async def on_message(message):
@@ -134,4 +148,3 @@ if __name__ == '__main__':
         client.run(TOKEN)
     else:
         print("Failed to create the bot client.")
-
