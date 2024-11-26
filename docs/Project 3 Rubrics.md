@@ -4,7 +4,7 @@ CSC 510 SE GROUP 90
 2. Kaustubh Sonawane (ksonawa@ncsu.edu)
 3. Tejas Desai (tdesai@ncsu.edu)
 
-**Grading of** [Saveurs Sélection](https://github.com/ForkBombers/Recipe_Recommender)
+**Grading of** [Enigma](https://github.com/ForkBombers/Enigma)
 
 <table>
 <colgroup>
@@ -34,31 +34,31 @@ href=""><u></u></a></td>
 <td>Workload is spread over the whole team</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/graphs/contributors?from=9%2F28%2F2024"><u></u></a></td>
+href="https://github.com/ForkBombers/Enigma/graphs/contributors?from=9%2F28%2F2024"><u></u></a></td>
 </tr>
 <tr class="even">
 <td>Number of commits</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master</u></a></td>
 </tr>
 <tr class="odd">
 <td>Number of commits: by different people</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/pulse"><u>https://github.com/ForkBombers/Recipe_Recommender/pulse</u></a></td>
+href="https://github.com/ForkBombers/Enigma/pulse"><u>https://github.com/ForkBombers/Enigma/pulse</u></a></td>
 </tr>
 <tr class="even">
 <td>Issues reports: there are many</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/issues"><u>https://github.com/ForkBombers/Recipe_Recommender/issues</u></a></td>
+href="https://github.com/ForkBombers/Enigma/issues"><u>https://github.com/ForkBombers/Enigma/issues</u></a></td>
 </tr>
 <tr class="odd">
 <td>Issues are being closed</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/issues?q=is%3Aissue+is%3Aclosed"><u>https://github.com/ForkBombers/Recipe_Recommender/issues?q=is%3Aissue+is%3Aclosed</u></a></td>
+href="https://github.com/ForkBombers/Enigma/issues?q=is%3Aissue+is%3Aclosed"><u>https://github.com/ForkBombers/Enigma/issues?q=is%3Aissue+is%3Aclosed</u></a></td>
 </tr>
 <tr class="even">
 <td>*DOI badge: exists</td>
@@ -70,14 +70,14 @@ href="https://doi.org/10.5281/zenodo.10023318"><u>https://doi.org/10.5281/zenodo
 <td>Docs: doco generated, format not ugly</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Docs: what: point descriptions of each class/function (in
 isolation)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Docs: how: for common use cases X,Y,Z mini-tutorials showing worked
@@ -91,7 +91,7 @@ href=""><u></u></a></td>
 punchline that makes you want to rush out and use the thing</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Docs: short video, animated, hosted on your repo. That convinces
@@ -109,37 +109,37 @@ href=""><u></u></a></td>
 <td>Use of style checkers</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/Style_Checker_and_Prettify_Code.yml"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/Style_Checker_and_Prettify_Code.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Style_Checker_and_Prettify_Code.yml"><u>https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Style_Checker_and_Prettify_Code.yml</u></a></td>
 </tr>
 <tr class="even">
 <td>Use of code formatters.</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml"><u>hhttps://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml"><u>hhttps://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Use of syntax checkers.</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml"><u>https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/Code_Formatter_and_Syntax_Check.yml</u></a></td>
 </tr>
 <tr class="even">
 <td>*Use of code coverage</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/coverage.yml"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/.github/workflows/coverage.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/coverage.yml"><u>https://github.com/ForkBombers/Enigma/blob/master/.github/workflows/coverage.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Other automated analysis tools</td>
 <td>1</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/actions"><u>https://github.com/ForkBombers/Recipe_Recommender/actions</u></a></td>
+href="https://github.com/ForkBombers/Enigma/actions"><u>https://github.com/ForkBombers/Enigma/actions</u></a></td>
 </tr>
 <tr class="even">
 <td>*Test cases exist</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master/test"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master/test</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master/test"><u>https://github.com/ForkBombers/Enigma/tree/master/test</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Test cases are routinely executed</td>
@@ -152,19 +152,19 @@ href=""><u></u></a></td>
 how to extend the system without screwing things up</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Issues are discussed before they are closed</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/issues?q=is%3Aissue+is%3Aclosed"><u>https://github.com/ForkBombers/Recipe_Recommender/issues?q=is%3Aissue+is%3Aclosed Since our team was meeting physically, issues were disscussed in person and not through repository</u></a></td>
+href="https://github.com/ForkBombers/Enigma/issues?q=is%3Aissue+is%3Aclosed"><u>https://github.com/ForkBombers/Enigma/issues?q=is%3Aissue+is%3Aclosed Since our team was meeting physically, issues were disscussed in person and not through repository</u></a></td>
 </tr>
 <tr class="even">
 <td>*Chat channel: exists</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender#email-support"><u>https://github.com/ForkBombers/Recipe_Recommender#email-support</u></a></td>
+href="https://github.com/ForkBombers/Enigma#email-support"><u>https://github.com/ForkBombers/Enigma#email-support</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Test cases: a large proportion of the issues related to handling
@@ -177,14 +177,14 @@ failing cases.</td>
 get to all tools and files</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Evidence that the whole team is using the same tools (e.g. config
 files in the repo, updated by lots of different people)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master</u></a></td>
 </tr>
 <tr class="even">
 <td>Evidence that the whole team is using the same tools (e.g. tutor can
@@ -192,34 +192,34 @@ ask anyone to share screen, they demonstrate the system running on their
 computer)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master each contributer had access to repository, tools and files</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master each contributer had access to repository, tools and files</u></a></td>
 </tr>
 <tr class="odd">
 <td>Evidence that the members of the team are working across multiple
 places in the code base</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master"><u>https://github.com/ForkBombers/Enigma/tree/master</u></a></td>
 </tr>
 <tr class="even">
 <td>Short release cycles</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/releases"><u>https://github.com/ForkBombers/Recipe_Recommender/releases</u></a></td>
+href="https://github.com/ForkBombers/Enigma/releases"><u>https://github.com/ForkBombers/Enigma/releases</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does the website and documentation provide a clear, high-level
 overview of your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Does the website and documentation clearly describe the type of user
 who should use your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Are there any case studies to show how the software has been used by
@@ -236,7 +236,7 @@ developers and others?</td>
 <td>Is the project/software name free from trademark violations?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a></td>
 </tr>
 <tr class="even">
 <td>Is the software available as a package that can be deployed without
@@ -248,7 +248,7 @@ building it?</td>
 <td>Is your software available for free?</td>
 <td>3</td>
 <td><a
-href="hhttps://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE</u></a></td>
+href="hhttps://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a></td>
 </tr>
 <tr class="even">
 <td>Is the source code publicly available to download, either as a
@@ -263,14 +263,14 @@ likeGitHub (https://github.com), BitBucket
 (https://sourceforge.net)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender"><u>https://github.com/ForkBombers/Recipe_Recommender</u></a></td>
+href="https://github.com/ForkBombers/Enigma"><u>https://github.com/ForkBombers/Enigma</u></a></td>
 </tr>
 <tr class="even">
 <td>Is the documentation clearly available on your website or within
 your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does the documentation include a "quick start" guide, that provides
@@ -278,7 +278,7 @@ a short overview of how to use your software with some basic examples of
 use?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md#installation"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md#installation</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md#installation"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md#installation</u></a></td>
 </tr>
 <tr class="even">
 <td>If you provide more extensive documentation, does this provide
@@ -292,7 +292,7 @@ software?</td>
 functions and options?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender#full-version-main-menu"><u>https://github.com/ForkBombers/Recipe_Recommender#full-version-main-menu</u></a></td>
+href="https://github.com/ForkBombers/Enigma#full-version-main-menu"><u>https://github.com/ForkBombers/Enigma#full-version-main-menu</u></a></td>
 </tr>
 <tr class="even">
 <td>Is there a troubleshooting information that describes the symptoms
@@ -311,7 +311,7 @@ other software, is there a comprehensive API documentation?</td>
 code?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender#readme"><u>https://github.com/ForkBombers/Recipe_Recommender#readme</u></a></td>
+href="https://github.com/ForkBombers/Enigma#readme"><u>https://github.com/ForkBombers/Enigma#readme</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you publish your release history e.g. release data, version
@@ -319,28 +319,28 @@ numbers, key features of each release etc. on your web site or in your
 documentation?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/releases"><u>https://github.com/ForkBombers/Recipe_Recommender/releases</u></a></td>
+href="https://github.com/ForkBombers/Enigma/releases"><u>https://github.com/ForkBombers/Enigma/releases</u></a></td>
 </tr>
 <tr class="even">
 <td>Does your software describe how a user can get help with using your
 software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master#readme"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master#readme</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master#readme"><u>https://github.com/ForkBombers/Enigma/tree/master#readme</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does your website and documentation describe what support, if any,
 you provide to users and developers?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master?tab=readme-ov-file#troubleshooting-and-support"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master?tab=readme-ov-file#troubleshooting-and-support</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support"><u>https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support</u></a></td>
 </tr>
 <tr class="even">
 <td>Does your project have an e-mail address or forum that is solely for
 supporting users?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/master?tab=readme-ov-file#troubleshooting-and-support"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/master?tab=readme-ov-file#troubleshooting-and-support</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support"><u>https://github.com/ForkBombers/Enigma/tree/master?tab=readme-ov-file#troubleshooting-and-support</u></a></td>
 </tr>
 <tr class="odd">
 <td>Are e-mails to your support e-mail address received by more than one
@@ -353,7 +353,7 @@ person?</td>
 users, so they can view bug reports and feature requests?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/issues"><u>https://github.com/ForkBombers/Recipe_Recommender/issues</u></a></td>
+href="https://github.com/ForkBombers/Enigma/issues"><u>https://github.com/ForkBombers/Enigma/issues</u></a></td>
 </tr>
 <tr class="odd">
 <td>Is your software’s architecture and design modular?</td>
@@ -417,33 +417,33 @@ conventions or standards?</td>
 accessibility conventions or standards?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender#readme"><u>https://github.com/ForkBombers/Recipe_Recommender#readme</u></a></td>
+href="https://github.com/ForkBombers/Enigma#readme"><u>https://github.com/ForkBombers/Enigma#readme</u></a></td>
 </tr>
 <tr class="even">
 <td>Is your source code stored in a repository under revision<br />
 control?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender"><u>https://github.com/ForkBombers/Recipe_Recommender</u></a></td>
+href="https://github.com/ForkBombers/Enigma"><u>https://github.com/ForkBombers/Enigma</u></a></td>
 </tr>
 <tr class="odd">
 <td>Is each source code release a snapshot of the repository?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/releases"><u>https://github.com/ForkBombers/Recipe_Recommender/releases</u></a></td>
+href="https://github.com/ForkBombers/Enigma/releases"><u>https://github.com/ForkBombers/Enigma/releases</u></a></td>
 </tr>
 <tr class="even">
 <td>Are releases tagged in the repository?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/releases"><u>https://github.com/ForkBombers/Recipe_Recommender/releases</u></a></td>
+href="https://github.com/ForkBombers/Enigma/releases"><u>https://github.com/ForkBombers/Enigma/releases</u></a></td>
 </tr>
 <tr class="odd">
 <td>Is there a branch of the repository that is always stable?<br />
 (i.e. tests always pass, code always builds successfully)</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/branches"><u>https://github.com/ForkBombers/Recipe_Recommender/branches</u></a></td>
+href="https://github.com/ForkBombers/Enigma/branches"><u>https://github.com/ForkBombers/Enigma/branches</u></a></td>
 </tr>
 <tr class="even">
 <td>*Do you back-up your repository?</td>
@@ -456,7 +456,7 @@ href="https://zenodo.org/record/10023318"><u>https://zenodo.org/record/10023318<
 your software from the source code?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender?tab=readme-ov-file#installation"><u>https://github.com/ForkBombers/Recipe_Recommender?tab=readme-ov-file#installation</u></a></td>
+href="https://github.com/ForkBombers/Enigma?tab=readme-ov-file#installation"><u>https://github.com/ForkBombers/Enigma?tab=readme-ov-file#installation</u></a></td>
 </tr>
 <tr class="even">
 <td>Can you build, or package, your software using an<br />
@@ -472,20 +472,20 @@ Maven (https://maven.apache.org/)</td>
 your software?</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender?tab=readme-ov-file#project-setup-steps"><u>https://github.com/ForkBombers/Recipe_Recommender?tab=readme-ov-file#project-setup-steps</u></a></td>
+href="https://github.com/ForkBombers/Enigma?tab=readme-ov-file#project-setup-steps"><u>https://github.com/ForkBombers/Enigma?tab=readme-ov-file#project-setup-steps</u></a></td>
 </tr>
 <tr class="even">
 <td>*Does your documentation list all third-party dependencies?</td>
 <td>1</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/requirements.txt"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/requirements.txt</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/requirements.txt"><u>https://github.com/ForkBombers/Enigma/blob/master/requirements.txt</u></a></td>
 </tr>
 <tr class="odd">
 <td>*Does your documentation list the version number for all<br />
 third-party dependencies?</td>
 <td>1</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/requirements.txt"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/requirements.txt</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/requirements.txt"><u>https://github.com/ForkBombers/Enigma/blob/master/requirements.txt</u></a></td>
 </tr>
 <tr class="even">
 <td>Does your software list the web address, and licences for<br />
@@ -493,7 +493,7 @@ all third-party dependencies and say whether the<br />
 dependencies are mandatory or optional?</td>
 <td>3</td> 
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -508,7 +508,7 @@ been built or deployed to show whether the build or<br />
 deployment has been successful?</td>
 <td>2</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/v2/test"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/v2/test</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/v2/test"><u>https://github.com/ForkBombers/Enigma/tree/v2/test</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you have an automated test suite for your software?</td>
@@ -520,7 +520,7 @@ href="https://github.com/ForkBombers/Recipe_Recommender/tree/v2/test"><u>https:/
 your tests on the latest version of the source code?</td>
 <td>1</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/actions/workflows/code_cov.yml"><u>https://github.com/ForkBombers/Recipe_Recommender/actions/workflows/code_cov.yml</u></a></td>
+href="https://github.com/ForkBombers/Enigma/actions/workflows/code_cov.yml"><u>https://github.com/ForkBombers/Enigma/actions/workflows/code_cov.yml</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you use continuous integration, automatically running<br />
@@ -532,7 +532,7 @@ tests whenever changes are made to your source code?</td>
 <td>*Are your test results publicly visible?</td>
 <td>1</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/tree/v2/test"><u>https://github.com/ForkBombers/Recipe_Recommender/tree/v2/test</u></a></td>
+href="https://github.com/ForkBombers/Enigma/tree/v2/test"><u>https://github.com/ForkBombers/Enigma/tree/v2/test</u></a></td>
 </tr>
 <tr class="odd">
 <td>Are all manually-run tests documented?</td>
@@ -547,7 +547,7 @@ software?e.g. release announcements, publications,<br />
 workshops, conference presentations</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does your website state how many projects and users are<br />
@@ -565,7 +565,7 @@ associated with your project?</td>
 website?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/README.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/README.md"><u>https://github.com/ForkBombers/Enigma/blob/master/README.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Do you list your project's publications on your website or<br />
@@ -600,32 +600,32 @@ documentation updates, tutorials) from people who are not<br />
 part of your project?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do you have a contributions policy?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="even">
 <td>Is your contributions' policy publicly available?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Do contributors keep the copyright/IP of their contributions?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE</u></a>E</td>
+href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a>E</td>
 </tr>
 <tr class="even">
 <td>Does your website and documentation clearly state the<br />
 copyright owners of your software and documentation?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/CONTRIBUTING.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CONTRIBUTING.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does each of your source code files include a copyright<br />
@@ -638,7 +638,7 @@ statement?</td>
 licence of your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/LICENSE</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/LICENSE"><u>https://github.com/ForkBombers/Enigma/blob/master/LICENSE</u></a></td>
 </tr>
 <tr class="odd">
 <td>Is your software released under an open source licence?</td>
@@ -660,7 +660,7 @@ open-source licence?</td>
 <td>Do you have a recommended citation for your software?</td>
 <td>3</td>
 <td><a
-href="https://github.com/ForkBombers/Recipe_Recommender/blob/master/CITATION.md"><u>https://github.com/ForkBombers/Recipe_Recommender/blob/master/CITATION.md</u></a></td>
+href="https://github.com/ForkBombers/Enigma/blob/master/CITATION.md"><u>https://github.com/ForkBombers/Enigma/blob/master/CITATION.md</u></a></td>
 </tr>
 <tr class="odd">
 <td>Does your website or documentation include a project<br />
