@@ -64,7 +64,7 @@ href="https://github.com/ForkBombers/Enigma/issues?q=is%3Aissue+is%3Aclosed"><u>
 <td>*DOI badge: exists</td>
 <td>3</td>
 <td><a
-href="https://doi.org/10.5281/zenodo.10023318"><u>https://doi.org/10.5281/zenodo.10023318</u></a></td>
+href="https://doi.org/10.5281/zenodo.14226015"><u>https://doi.org/10.5281/zenodo.14226015</u></a></td>
 </tr>
 <tr class="odd">
 <td>Docs: doco generated, format not ugly</td>
