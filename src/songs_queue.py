@@ -2,6 +2,7 @@ import json
 import os
 from random import shuffle
 
+
 class Songs_Queue:
 
     def __init__(self, song_names=None):
@@ -13,7 +14,8 @@ class Songs_Queue:
             self.save_to_json()
         else:
             self.load_from_json()
-        self.user_feedback = {}  # In-memory feedback dictionary, no file storage
+        self.user_feedback = {
+        }  # In-memory feedback dictionary, no file storage
 
     def save_to_json(self):
         data = {
@@ -122,4 +124,3 @@ class Songs_Queue:
         if 0 <= self.current_index < len(self.queue):
             return self.queue[self.current_index]
         return None
-
