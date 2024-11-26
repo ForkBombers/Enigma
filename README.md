@@ -7,7 +7,7 @@
 <div align="center">
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![DOI](https://doi.org/10.5281/zenodo.14226015.svg)](https://doi.org/10.5281/zenodo.14226015)
+[![DOI](https://doi.org/10.5281/zenodo.14226015)](https://doi.org/10.5281/zenodo.14226015)
 [![Build Status](https://github.com/ForkBombers/Enigma/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions)
 [![GitHub Release](https://img.shields.io/github/release/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma/releases)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma)
