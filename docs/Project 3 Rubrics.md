@@ -15,7 +15,7 @@ CSC 510 SE GROUP 90
 <thead>
 <tr class="header">
 <th>Total</th>
-<th colspan="2">212</th>
+<th colspan="2">234</th>
 </tr>
 </thead>
 <tbody>
