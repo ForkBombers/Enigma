@@ -13,7 +13,6 @@ import sys
 import urllib.parse, urllib.request, re
 from collections import defaultdict
 
-
 from src.get_all import *
 from src.utils import searchSong, random_25, has_role_dj, check_vc_status
 from src.songs_queue import Songs_Queue
@@ -57,7 +56,10 @@ class Songs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.songs_queue = Songs_Queue([])
-        self.user_feedback = defaultdict(lambda: {'liked': [], 'disliked': []})  # Stores feedback for users
+        self.user_feedback = defaultdict(lambda: {
+            'liked': [],
+            'disliked': []
+        })  # Stores feedback for users
 
     # """
     # Function for playing a song
@@ -284,9 +286,12 @@ class Songs(commands.Cog):
     """
     Like command to store feedback for songs
     """
-    @commands.command(name="like", help="Like a song to improve recommendations")
+
+    @commands.command(name="like",
+                      help="Like a song to improve recommendations")
     async def like(self, ctx):
-        current_song = self.songs_queue.current_song()  # Get the currently playing song
+        current_song = self.songs_queue.current_song(
+        )  # Get the currently playing song
         if not current_song:
             await ctx.send("No song is currently playing to like.")
             return
@@ -297,16 +302,19 @@ class Songs(commands.Cog):
             self.user_feedback[user_id]['liked'].append(current_song)
             # Optionally, provide feedback to user
             await ctx.send(f"Liked: {current_song}")
-        
+
         # Adjust recommendations based on likes
         await self.adjust_recommendations(ctx)
 
     """
     Dislike command to store feedback for songs
     """
-    @commands.command(name="dislike", help="Dislike a song to avoid similar ones")
+
+    @commands.command(name="dislike",
+                      help="Dislike a song to avoid similar ones")
     async def dislike(self, ctx):
-        current_song = self.songs_queue.current_song()  # Get the currently playing song
+        current_song = self.songs_queue.current_song(
+        )  # Get the currently playing song
         if not current_song:
             await ctx.send("No song is currently playing to dislike.")
             return
@@ -317,18 +325,19 @@ class Songs(commands.Cog):
             self.user_feedback[user_id]['disliked'].append(current_song)
             # Optionally, provide feedback to user
             await ctx.send(f"Disliked: {current_song}")
-        
+
         # Adjust recommendations based on dislikes
         await self.adjust_recommendations(ctx)
 
     """
     Function to adjust recommendations based on feedback
     """
+
     async def adjust_recommendations(self, ctx):
         # Collect liked and disliked songs from all users
         liked_songs = set()
         disliked_songs = set()
-        
+
         # Collect user feedback
         for user_id, feedback in self.user_feedback.items():
             liked_songs.update(feedback['liked'])
@@ -336,15 +345,19 @@ class Songs(commands.Cog):
 
         # Recommend songs based on feedback (excluding disliked and favoring liked)
         all_songs = random_25()  # Or use your existing recommendation function
-        recommended_songs = [song for song in all_songs if song not in disliked_songs]
-        
+        recommended_songs = [
+            song for song in all_songs if song not in disliked_songs
+        ]
+
         # You can fine-tune this to favor liked songs if necessary
         if liked_songs:
-            recommended_songs = [song for song in all_songs if song in liked_songs] + recommended_songs
-        
+            recommended_songs = [
+                song for song in all_songs if song in liked_songs
+            ] + recommended_songs
+
         # Update the queue
         self.songs_queue = Songs_Queue(recommended_songs)
-        
+
         # Play the next recommended song
         if recommended_songs:
             await self.play_song(ctx, self.songs_queue.next_song())
