@@ -11,6 +11,7 @@ import yt_dlp
 import asyncio
 import sys
 import urllib.parse, urllib.request, re
+from collections import defaultdict
 
 from src.get_all import *
 from src.utils import searchSong, random_25, has_role_dj, check_vc_status
@@ -55,7 +56,10 @@ class Songs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.songs_queue = Songs_Queue([])
-        self.loop = False  # New loop variable to keep track of loop status
+        self.user_feedback = defaultdict(lambda: {
+            'liked': [],
+            'disliked': []
+        })  # Stores feedback for users
 
     # """
     # Function for playing a song
@@ -67,6 +71,7 @@ class Songs(commands.Cog):
     #     user_message = str(ctx.message.content)
     #     song_name = user_message.split(' ', 1)[1]
     #     await self.play_song(song_name, ctx)
+
     """
     Function to resume playing
     """
@@ -132,10 +137,6 @@ class Songs(commands.Cog):
             if voice_channel.is_playing():
                 voice_channel.stop()
 
-            # If loop is enabled, replay the same song
-            if self.loop and self.current_song:
-                song_name = self.current_song
-
             # Check if song_name is a YouTube URL; otherwise, perform a search
             if youtube_base_url not in song_name:
                 query_string = urllib.parse.urlencode(
@@ -164,14 +165,12 @@ class Songs(commands.Cog):
 
             song = data['url']
             song_title = data['title']
-            self.current_song = song_name  # Store the current song for looping
             await ctx.send(f"Now playing: {song_title}")
             print(f"Now playing: {song_title}")
 
             # Play the audio
             player = discord.FFmpegOpusAudio(song, **ffmpeg_options)
-            ##voice_channel.play(player)
-            voice_channel.play(player, after=lambda e: self.after_play(ctx))
+            voice_channel.play(player)
 
             # After successfully playing the song, update the current_index
             self.songs_queue.current_index = self.songs_queue.index
@@ -183,13 +182,19 @@ class Songs(commands.Cog):
                 f"An error occurred while trying to play the song: {str(e)}")
             print(f"Error in play_song(): {e}")
 
-
+    """
+    Function to loop the song or queue
+    """
 
     @commands.command(name="loop", help="Toggle loop mode (off/song/queue)")
     @has_role_dj()
     async def loop(self, ctx):
         mode = self.songs_queue.toggle_loop()
         await ctx.send(f"Loop mode set to: {mode}")
+
+    """
+    Function to replay the current song
+    """
 
     @commands.command(name="replay", help="Replay the current song")
     @has_role_dj()
@@ -200,21 +205,6 @@ class Songs(commands.Cog):
             await self.play_song(ctx, current_song)
         else:
             await ctx.send("No song to replay.")
-
-
-
-    """
-    Helper function to check if the song should be replayed
-    """
-
-    def after_play(self, ctx):
-        if self.loop and self.current_song:
-            coro = self.play_song(ctx, self.current_song)
-            asyncio.run_coroutine_threadsafe(coro, self.bot.loop)
-        else:
-            # If not looping, play the next song in the queue
-            coro = self.next_song(ctx)
-            asyncio.run_coroutine_threadsafe(coro, self.bot.loop)
 
     """
     Helper function to handle empty song queue
@@ -231,6 +221,7 @@ class Songs(commands.Cog):
     """
     Function to play the next song in the queue
     """
+
     @commands.command(name="next_song", help="To play next song in queue")
     @has_role_dj()
     async def next_song(self, ctx):
@@ -250,6 +241,10 @@ class Songs(commands.Cog):
         await ctx.send(f"Playing the next song: {next_song}")
         await self.play_song(ctx, next_song)
 
+    """
+    Function to play the previous song in the queue
+    """
+
     @commands.command(name="prev_song", help="To play prev song in queue")
     @has_role_dj()
     async def prev_song(self, ctx):
@@ -268,49 +263,9 @@ class Songs(commands.Cog):
 
         await ctx.send(f"Playing the previous song: {prev_song}")
         await self.play_song(ctx, prev_song)
-    # @commands.command(name="next_song", help="To play next song in queue")
-    # @has_role_dj()
-    # async def next_song(self, ctx):
-    #     print("NEXT")
-    #     self.songs_queue.load_from_json()
-    #     print(self.songs_queue.queue)
-    #     voice_client = ctx.message.guild.voice_client
-    #     empty_queue = await self.handle_empty_queue(ctx)
-
-    #     if empty_queue:
-    #         await ctx.send("The queue is empty.")
-    #         return
-
-    #     if voice_client.is_playing():
-    #         voice_client.pause()
-    #     # print(self.songs_queue) # temp remove
-    #     print("!")
-
-    #     # next_song = self.songs_queue.queue.next_song()
-    #     next_song = self.songs_queue.next_song()
-    #     # print(next_song)
-    #     if next_song is None:
-    #         await ctx.send("No more songs in the queue")
-    #         return
-    #     # if next_song is not None:
-    #     #     print(next_song)
-
-    #     await ctx.send("Playing the next song now ... ")
-    #     await self.play_song(ctx, next_song)
 
     """
-    Function to play the previous song in the queue
-    """
-
-    # @commands.command(name="prev_song", help="To play prev song in queue")
-    # @has_role_dj()
-    # async def prev_song(self, ctx):
-    #     empty_queue = await self.handle_empty_queue(ctx)
-    #     if not empty_queue:
-    #         await self.play_song(ctx, self.songs_queue.prev_song())
-
-    """
-    Function to pause the music that is playing
+    Function to pause the song that is playing
     """
 
     @commands.command(name='pause', help='This command pauses the song')
@@ -328,7 +283,7 @@ class Songs(commands.Cog):
             await ctx.send("The bot is not playing anything at the moment.")
 
     """
-    Function to jump to a specific song in the queue
+    Function to jump to a specific song within the queue
     """
 
     @commands.command(name="jump_to",
@@ -353,6 +308,87 @@ class Songs(commands.Cog):
         # Play the selected song
         await ctx.send(f"Jumping to: {jumped_song}")
         await self.play_song(ctx, jumped_song)
+
+    """
+    Like command to store feedback for songs
+    """
+
+    @commands.command(name="like",
+                      help="Like a song to improve recommendations")
+    async def like(self, ctx):
+        current_song = self.songs_queue.current_song(
+        )  # Get the currently playing song
+        if not current_song:
+            await ctx.send("No song is currently playing to like.")
+            return
+
+        # Save the feedback
+        user_id = ctx.author.id
+        if current_song not in self.user_feedback[user_id]['liked']:
+            self.user_feedback[user_id]['liked'].append(current_song)
+            # Optionally, provide feedback to user
+            await ctx.send(f"Liked: {current_song}")
+
+        # Adjust recommendations based on likes
+        await self.adjust_recommendations(ctx)
+
+    """
+    Dislike command to store feedback for songs
+    """
+
+    @commands.command(name="dislike",
+                      help="Dislike a song to avoid similar ones")
+    async def dislike(self, ctx):
+        current_song = self.songs_queue.current_song(
+        )  # Get the currently playing song
+        if not current_song:
+            await ctx.send("No song is currently playing to dislike.")
+            return
+
+        # Save the feedback
+        user_id = ctx.author.id
+        if current_song not in self.user_feedback[user_id]['disliked']:
+            self.user_feedback[user_id]['disliked'].append(current_song)
+            # Optionally, provide feedback to user
+            await ctx.send(f"Disliked: {current_song}")
+
+        # Adjust recommendations based on dislikes
+        await self.adjust_recommendations(ctx)
+
+    """
+    Function to adjust recommendations based on feedback
+    """
+
+    async def adjust_recommendations(self, ctx):
+        # Collect liked and disliked songs from all users
+        liked_songs = set()
+        disliked_songs = set()
+
+        # Collect user feedback
+        for user_id, feedback in self.user_feedback.items():
+            liked_songs.update(feedback['liked'])
+            disliked_songs.update(feedback['disliked'])
+
+        # Recommend songs based on feedback (excluding disliked and favoring liked)
+        all_songs = random_25()  # Or use your existing recommendation function
+        recommended_songs = [
+            song for song in all_songs if song not in disliked_songs
+        ]
+
+        # You can fine-tune this to favor liked songs if necessary
+        if liked_songs:
+            recommended_songs = [
+                song for song in all_songs if song in liked_songs
+            ] + recommended_songs
+
+        # Update the queue
+        self.songs_queue = Songs_Queue(recommended_songs)
+
+        # Play the next recommended song
+        if recommended_songs:
+            await self.play_song(ctx, self.songs_queue.next_song())
+        else:
+            await ctx.send("No more recommendations based on your feedback.")
 
     """
     Function to generate poll for playing the recommendations
@@ -532,38 +568,9 @@ class Songs(commands.Cog):
                 await self.play_song(ctx, song_name=song_name)
                 return
 
-    """
-    Function to loop the current song from the queue
-    """
-
-    @commands.command(name="loop", help="Toggle loop for the current song")
-    @has_role_dj()
-    async def loop(self, ctx):
-        self.loop = not self.loop  # Toggle loop status
-        status = "enabled" if self.loop else "disabled"
-        await ctx.send(f"Loop is now {status}.")
-
-    """
-    Function to replay the current song from the queue
-    """
-
-    @commands.command(name="replay", help="Replay the current song")
-    @has_role_dj()
-    async def replay(self, ctx):
-        if self.current_song:
-            await self.play_song(ctx, self.current_song)
-        else:
-            await ctx.send("No song is currently playing.")
-
-        # if voice_client.is_playing():
-        #     await ctx.send("The bot is already playing.")
-        #     return
-
-
 """
     Function to add the cog to the bot
 """
-
 
 async def setup(client):
     await client.add_cog(Songs(client))

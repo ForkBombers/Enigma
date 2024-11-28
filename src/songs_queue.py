@@ -15,6 +15,8 @@ class Songs_Queue:
             self.save_to_json()
         else:
             self.load_from_json()
+        self.user_feedback = {
+        }  # In-memory feedback dictionary, no file storage
 
     def save_to_json(self):
         data = {
@@ -37,35 +39,23 @@ class Songs_Queue:
             self.index = 0
             self.current_index = 0
 
-    # def next_song(self):
-    #     if not self.queue:
-    #         return None
-    #     if self.index >= len(self.queue):
-    #         self.index = 0
-    #     song = self.queue[self.index]
-    #     self.current_index = self.index
-    #     self.index += 1
-    #     self.save_to_json()
-    #     return song
+    def add_feedback(self, song_name, feedback_type):
+        # Store feedback in memory (no persistence)
+        if song_name not in self.user_feedback:
+            self.user_feedback[song_name] = {"liked": [], "disliked": []}
 
-    # def next_song(self):
-    #     if not self.queue:
-    #         return None
-    #     #song = self.queue[self.index]
-    #     self.index = (self.index + 1) % len(self.queue)
-    #     self.current_index = self.index
-    #     self.save_to_json()
-    #     return self.queue[self.index]
-    #     #return song
-
-    # def next_song(self):
-    #     if not self.queue:
-    #         return None
-    #     song = self.queue[self.index]
-    #     self.index = (self.index + 1) % len(self.queue)
-    #     self.current_index = self.index
-    #     self.save_to_json()
-    #     return song
+        if feedback_type == "like":
+            if song_name not in self.user_feedback[song_name]["liked"]:
+                self.user_feedback[song_name]["liked"].append(song_name)
+            # Remove from dislikes if it exists
+            if song_name in self.user_feedback[song_name]["disliked"]:
+                self.user_feedback[song_name]["disliked"].remove(song_name)
+        elif feedback_type == "dislike":
+            if song_name not in self.user_feedback[song_name]["disliked"]:
+                self.user_feedback[song_name]["disliked"].append(song_name)
+            # Remove from likes if it exists
+            if song_name in self.user_feedback[song_name]["liked"]:
+                self.user_feedback[song_name]["liked"].remove(song_name)
 
     def toggle_loop(self):
         if self.loop_mode == "off":
@@ -76,16 +66,6 @@ class Songs_Queue:
             self.loop_mode = "off"
         return self.loop_mode
 
-
-    # def next_song(self):
-    #     if not self.queue:
-    #         return None
-    #     self.index += 1
-    #     if self.index >= len(self.queue):
-    #         self.index = 0
-    #     self.current_index = self.index
-    #     self.save_to_json()
-    #     return self.queue[self.index]
     def next_song(self):
         if not self.queue:
             return None
@@ -101,16 +81,6 @@ class Songs_Queue:
         self.save_to_json()
         return self.queue[self.index]
 
-    # def prev_song(self):
-    #     if not self.queue:
-    #         return None
-    #     self.index -= 1
-    #     if self.index < 0:
-    #         self.index = len(self.queue) - 1
-    #     self.current_index = self.index
-    #     self.save_to_json()
-    #     return self.queue[self.index]
-
     def prev_song(self):
         if not self.queue:
             return None
@@ -125,7 +95,6 @@ class Songs_Queue:
         self.current_index = self.index
         self.save_to_json()
         return self.queue[self.index]
-    
     
     def replay_current(self):
         if not self.queue:
@@ -152,7 +121,6 @@ class Songs_Queue:
             self.current_index = 0
         self.save_to_json()
         return len(self.queue) == 1
-        #self.save_to_json()
 
     def set_current_index(self, index):
         if 0 <= index < len(self.queue):
@@ -175,7 +143,6 @@ class Songs_Queue:
                 self.current_index = i
                 self.save_to_json()
                 return song
-                #return self.queue[i]  # Return the current song, not the next one
         return None
 
     def get_current_song(self):
