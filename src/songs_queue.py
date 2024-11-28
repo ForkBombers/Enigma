@@ -95,7 +95,7 @@ class Songs_Queue:
         self.current_index = self.index
         self.save_to_json()
         return self.queue[self.index]
-    
+
     def replay_current(self):
         if not self.queue:
             return None

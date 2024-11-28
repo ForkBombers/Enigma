@@ -71,7 +71,6 @@ class Songs(commands.Cog):
     #     user_message = str(ctx.message.content)
     #     song_name = user_message.split(' ', 1)[1]
     #     await self.play_song(song_name, ctx)
-
     """
     Function to resume playing
     """
@@ -568,9 +567,11 @@ class Songs(commands.Cog):
                 await self.play_song(ctx, song_name=song_name)
                 return
 
+
 """
     Function to add the cog to the bot
 """
+
 
 async def setup(client):
     await client.add_cog(Songs(client))
