@@ -11,6 +11,7 @@ class Songs_Queue:
             self.queue = song_names
             self.index = 0
             self.current_index = 0
+            self.loop_mode = "off"  # Can be "off", "song", or "queue"
             self.save_to_json()
         else:
             self.load_from_json()
@@ -56,12 +57,26 @@ class Songs_Queue:
             if song_name in self.user_feedback[song_name]["liked"]:
                 self.user_feedback[song_name]["liked"].remove(song_name)
 
+    def toggle_loop(self):
+        if self.loop_mode == "off":
+            self.loop_mode = "song"
+        elif self.loop_mode == "song":
+            self.loop_mode = "queue"
+        else:
+            self.loop_mode = "off"
+        return self.loop_mode
+
     def next_song(self):
         if not self.queue:
             return None
+        if self.loop_mode == "song":
+            return self.queue[self.index]
         self.index += 1
         if self.index >= len(self.queue):
-            self.index = 0
+            if self.loop_mode == "queue":
+                self.index = 0
+            else:
+                self.index = len(self.queue) - 1
         self.current_index = self.index
         self.save_to_json()
         return self.queue[self.index]
@@ -69,11 +84,21 @@ class Songs_Queue:
     def prev_song(self):
         if not self.queue:
             return None
+        if self.loop_mode == "song":
+            return self.queue[self.index]
         self.index -= 1
         if self.index < 0:
-            self.index = len(self.queue) - 1
+            if self.loop_mode == "queue":
+                self.index = len(self.queue) - 1
+            else:
+                self.index = 0
         self.current_index = self.index
         self.save_to_json()
+        return self.queue[self.index]
+    
+    def replay_current(self):
+        if not self.queue:
+            return None
         return self.queue[self.index]
 
     def get_len(self):

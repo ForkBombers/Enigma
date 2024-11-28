@@ -71,6 +71,7 @@ class Songs(commands.Cog):
     #     user_message = str(ctx.message.content)
     #     song_name = user_message.split(' ', 1)[1]
     #     await self.play_song(song_name, ctx)
+
     """
     Function to resume playing
     """
@@ -182,6 +183,30 @@ class Songs(commands.Cog):
             print(f"Error in play_song(): {e}")
 
     """
+    Function to loop the song or queue
+    """
+
+    @commands.command(name="loop", help="Toggle loop mode (off/song/queue)")
+    @has_role_dj()
+    async def loop(self, ctx):
+        mode = self.songs_queue.toggle_loop()
+        await ctx.send(f"Loop mode set to: {mode}")
+
+    """
+    Function to replay the current song
+    """
+
+    @commands.command(name="replay", help="Replay the current song")
+    @has_role_dj()
+    async def replay(self, ctx):
+        current_song = self.songs_queue.replay_current()
+        if current_song:
+            await ctx.send(f"Replaying: {current_song}")
+            await self.play_song(ctx, current_song)
+        else:
+            await ctx.send("No song to replay.")
+
+    """
     Helper function to handle empty song queue
     """
 
@@ -200,31 +225,20 @@ class Songs(commands.Cog):
     @commands.command(name="next_song", help="To play next song in queue")
     @has_role_dj()
     async def next_song(self, ctx):
-        print("NEXT")
-        self.songs_queue.load_from_json()
-        print(self.songs_queue.queue)
-        voice_client = ctx.message.guild.voice_client
         empty_queue = await self.handle_empty_queue(ctx)
-
         if empty_queue:
-            await ctx.send("The queue is empty.")
             return
 
-        if voice_client.is_playing():
-            voice_client.pause()
-        # print(self.songs_queue) # temp remove
-        print("!")
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
 
-        # next_song = self.songs_queue.queue.next_song()
         next_song = self.songs_queue.next_song()
-        # print(next_song)
         if next_song is None:
             await ctx.send("No more songs in the queue")
             return
-        # if next_song is not None:
-        #     print(next_song)
 
-        await ctx.send("Playing the next song now ... ")
+        await ctx.send(f"Playing the next song: {next_song}")
         await self.play_song(ctx, next_song)
 
     """
@@ -235,11 +249,23 @@ class Songs(commands.Cog):
     @has_role_dj()
     async def prev_song(self, ctx):
         empty_queue = await self.handle_empty_queue(ctx)
-        if not empty_queue:
-            await self.play_song(ctx, self.songs_queue.prev_song())
+        if empty_queue:
+            return
+
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
+
+        prev_song = self.songs_queue.prev_song()
+        if prev_song is None:
+            await ctx.send("No previous songs in the queue")
+            return
+
+        await ctx.send(f"Playing the previous song: {prev_song}")
+        await self.play_song(ctx, prev_song)
 
     """
-    Function to pause the music that is playing
+    Function to pause the song that is playing
     """
 
     @commands.command(name='pause', help='This command pauses the song')
@@ -257,7 +283,7 @@ class Songs(commands.Cog):
             await ctx.send("The bot is not playing anything at the moment.")
 
     """
-    Function to jump to a specific song in the queue
+    Function to jump to a specific song within the queue
     """
 
     @commands.command(name="jump_to",
@@ -542,15 +568,9 @@ class Songs(commands.Cog):
                 await self.play_song(ctx, song_name=song_name)
                 return
 
-        # if voice_client.is_playing():
-        #     await ctx.send("The bot is already playing.")
-        #     return
-
-
 """
     Function to add the cog to the bot
 """
-
 
 async def setup(client):
     await client.add_cog(Songs(client))
