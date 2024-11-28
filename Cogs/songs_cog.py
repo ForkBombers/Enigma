@@ -183,6 +183,26 @@ class Songs(commands.Cog):
                 f"An error occurred while trying to play the song: {str(e)}")
             print(f"Error in play_song(): {e}")
 
+
+
+    @commands.command(name="loop", help="Toggle loop mode (off/song/queue)")
+    @has_role_dj()
+    async def loop(self, ctx):
+        mode = self.songs_queue.toggle_loop()
+        await ctx.send(f"Loop mode set to: {mode}")
+
+    @commands.command(name="replay", help="Replay the current song")
+    @has_role_dj()
+    async def replay(self, ctx):
+        current_song = self.songs_queue.replay_current()
+        if current_song:
+            await ctx.send(f"Replaying: {current_song}")
+            await self.play_song(ctx, current_song)
+        else:
+            await ctx.send("No song to replay.")
+
+
+
     """
     Helper function to check if the song should be replayed
     """
@@ -211,47 +231,83 @@ class Songs(commands.Cog):
     """
     Function to play the next song in the queue
     """
-
     @commands.command(name="next_song", help="To play next song in queue")
     @has_role_dj()
     async def next_song(self, ctx):
-        print("NEXT")
-        self.songs_queue.load_from_json()
-        print(self.songs_queue.queue)
-        voice_client = ctx.message.guild.voice_client
         empty_queue = await self.handle_empty_queue(ctx)
-
         if empty_queue:
-            await ctx.send("The queue is empty.")
             return
 
-        if voice_client.is_playing():
-            voice_client.pause()
-        # print(self.songs_queue) # temp remove
-        print("!")
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
 
-        # next_song = self.songs_queue.queue.next_song()
         next_song = self.songs_queue.next_song()
-        # print(next_song)
         if next_song is None:
             await ctx.send("No more songs in the queue")
             return
-        # if next_song is not None:
-        #     print(next_song)
 
-        await ctx.send("Playing the next song now ... ")
+        await ctx.send(f"Playing the next song: {next_song}")
         await self.play_song(ctx, next_song)
-
-    """
-    Function to play the previous song in the queue
-    """
 
     @commands.command(name="prev_song", help="To play prev song in queue")
     @has_role_dj()
     async def prev_song(self, ctx):
         empty_queue = await self.handle_empty_queue(ctx)
-        if not empty_queue:
-            await self.play_song(ctx, self.songs_queue.prev_song())
+        if empty_queue:
+            return
+
+        voice_client = ctx.message.guild.voice_client
+        if voice_client and voice_client.is_playing():
+            voice_client.stop()
+
+        prev_song = self.songs_queue.prev_song()
+        if prev_song is None:
+            await ctx.send("No previous songs in the queue")
+            return
+
+        await ctx.send(f"Playing the previous song: {prev_song}")
+        await self.play_song(ctx, prev_song)
+    # @commands.command(name="next_song", help="To play next song in queue")
+    # @has_role_dj()
+    # async def next_song(self, ctx):
+    #     print("NEXT")
+    #     self.songs_queue.load_from_json()
+    #     print(self.songs_queue.queue)
+    #     voice_client = ctx.message.guild.voice_client
+    #     empty_queue = await self.handle_empty_queue(ctx)
+
+    #     if empty_queue:
+    #         await ctx.send("The queue is empty.")
+    #         return
+
+    #     if voice_client.is_playing():
+    #         voice_client.pause()
+    #     # print(self.songs_queue) # temp remove
+    #     print("!")
+
+    #     # next_song = self.songs_queue.queue.next_song()
+    #     next_song = self.songs_queue.next_song()
+    #     # print(next_song)
+    #     if next_song is None:
+    #         await ctx.send("No more songs in the queue")
+    #         return
+    #     # if next_song is not None:
+    #     #     print(next_song)
+
+    #     await ctx.send("Playing the next song now ... ")
+    #     await self.play_song(ctx, next_song)
+
+    """
+    Function to play the previous song in the queue
+    """
+
+    # @commands.command(name="prev_song", help="To play prev song in queue")
+    # @has_role_dj()
+    # async def prev_song(self, ctx):
+    #     empty_queue = await self.handle_empty_queue(ctx)
+    #     if not empty_queue:
+    #         await self.play_song(ctx, self.songs_queue.prev_song())
 
     """
     Function to pause the music that is playing
