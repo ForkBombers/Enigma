@@ -144,6 +144,14 @@ class Songs_Queue:
                 self.save_to_json()
                 return song
         return None
+    
+    def move_song(self, from_pos, to_pos):
+        if 0 <= from_pos < len(self.queue) and 0 <= to_pos < len(self.queue):
+            song = self.queue.pop(from_pos)
+            self.queue.insert(to_pos, song)
+            self.save_to_json()
+            return True
+        return False
 
     def get_current_song(self):
         if 0 <= self.current_index < len(self.queue):
