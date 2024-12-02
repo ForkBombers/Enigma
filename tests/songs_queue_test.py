@@ -29,9 +29,12 @@ class TestSongsQueue(unittest.TestCase):
         self.queue.loop_mode = "queue"  # Enable queue loop mode for testing
         for i in range(len(self.sample_songs)):
             # Calculate the expected song in reverse order
-            expected_song = self.sample_songs[(self.queue.index - 1) % len(self.sample_songs)]
+            expected_song = self.sample_songs[(self.queue.index - 1) %
+                                              len(self.sample_songs)]
             actual_song = self.queue.prev_song()
-            print(f"Test iteration {i}: expected={expected_song}, actual={actual_song}")
+            print(
+                f"Test iteration {i}: expected={expected_song}, actual={actual_song}"
+            )
             self.assertEqual(actual_song, expected_song)
 
     def test_get_len(self):
