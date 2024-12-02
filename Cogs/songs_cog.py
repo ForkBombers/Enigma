@@ -369,7 +369,7 @@ class Songs(commands.Cog):
             disliked_songs.update(feedback['disliked'])
 
         # Recommend songs based on feedback (excluding disliked and favoring liked)
-        all_songs = random_25()  
+        all_songs = random_25()
         recommended_songs = [
             song for song in all_songs if song not in disliked_songs
         ]
