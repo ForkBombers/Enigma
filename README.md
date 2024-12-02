@@ -73,12 +73,12 @@ If you want to get added to the music server on discord to test the bot, drop an
 First, clone the repository and cd into the folder:
 
 ```
-$ git clone https://github.com/rohit-sram/Enigma.git
+$ git clone https://github.com/ForkBombers/Enigma.git
 ```
 
 Alternatively, clone repo using SSH keys,
   ```
-  $ git clone git@github.com:rohit-sram/Enigma.git
+  $ git clone git@github.com:ForkBombers/Enigma.git
   ```
 ```
 $ cd Enigma
