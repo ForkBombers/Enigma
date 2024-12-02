@@ -97,7 +97,7 @@ class Songs_Queue:
         self.current_index = self.index
         self.save_to_json()
         return self.queue[self.index]
-    
+
     def replay_current(self):
         if not self.queue:
             return None
@@ -146,7 +146,7 @@ class Songs_Queue:
                 self.save_to_json()
                 return song
         return None
-    
+
     def move_song(self, from_pos, to_pos):
         if 0 <= from_pos < len(self.queue) and 0 <= to_pos < len(self.queue):
             song = self.queue.pop(from_pos)
