@@ -38,7 +38,6 @@
   <li>Capability to toggle music pause/resume</li>
   <li>Capability to play any song- requires no youtube search</li>
   <li>Capability to iterate between songs</li>
-  <li>Capability to like or dislike the songs in queue</li>
   <li>Authorize specific channels for the bot to access</li>
   <li>Acts as an amplifier - can be used to play same music on multiple speakers to give a surround sound effect and increase volume output</li>
 </ul>
