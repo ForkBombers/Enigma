@@ -23,9 +23,9 @@
 </div>
 
 <p align="center">
-    <a href="https://github.com/rohit-sram/Enigma/issues/new">Report Bug</a>
+    <a href="https://github.com/ForkBombers/Enigma/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/rohit-sram/Enigma/issues">Request Feature</a>
+    <a href="https://github.com/ForkBombers/Enigma/issues">Request Feature</a>
 </p>
 </br>
 
@@ -73,12 +73,12 @@ If you want to get added to the music server on discord to test the bot, drop an
 First, clone the repository and cd into the folder:
 
 ```
-$ git clone https://github.com/rohit-sram/Enigma.git
+$ git clone https://github.com/ForkBombers/Enigma.git
 ```
 
 Alternatively, clone repo using SSH keys,
   ```
-  $ git clone git@github.com:rohit-sram/Enigma.git
+  $ git clone git@github.com:ForkBombers/Enigma.git
   ```
 ```
 $ cd Enigma
@@ -118,7 +118,7 @@ https://user-images.githubusercontent.com/21155121/205782352-426dcee7-f145-43f1-
 What We've Done:
   * Enigma now works on Linux and Windows
   * Created a Discord Bot via the Discord Developer Portal.
-  * Added functionalities to the Discord bot. Check [Features](https://github.com/rohit-sram/Enigma#--features-) above.
+  * Added functionalities to the Discord bot. Check [Features](https://github.com/ForkBombers/Enigma#--features-) above.
   * Call Enigma to voice channel to play music based on the user's requests.
   * Enigma plays songs without having to search on YouTube.
   * Added a lil more functionality to Enigma:

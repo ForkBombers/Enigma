@@ -71,7 +71,6 @@ class Songs(commands.Cog):
     #     user_message = str(ctx.message.content)
     #     song_name = user_message.split(' ', 1)[1]
     #     await self.play_song(song_name, ctx)
-
     """
     Function to resume playing
     """
