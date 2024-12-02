@@ -21,11 +21,6 @@ class TestSongsQueue(unittest.TestCase):
             self.queue.loop_mode = "queue"  # Enable queue loop mode for consistent testing
             self.assertEqual(self.queue.next_song(), expected_song)
 
-    # def test_prev_song(self):
-    #     # Move to the end of the queue
-    #     for _ in range(len(self.sample_songs)):
-    #         self.queue.next_song()
-
     def test_prev_song(self):
         # Move to the end of the queue first
         for _ in range(len(self.sample_songs) - 1):
