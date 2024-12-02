@@ -62,6 +62,47 @@ class TestSongsQueue(unittest.TestCase):
         self.assertEqual(self.queue.get_len(), original_length + 1)
         self.assertEqual(self.queue.queue[-1], new_song)
 
+    def test_jump_to_song(self):
+        self.assertEqual(self.queue.jump_to_song("Song C"), "Song C")
+        self.assertEqual(self.queue.index, 2)
+        self.assertEqual(self.queue.current_index, 2)
+        self.assertIsNone(self.queue.jump_to_song("Nonexistent Song"))
+
+    def test_get_current_song(self):
+        self.assertEqual(self.queue.get_current_song(), "Song A")
+        self.queue.next_song()
+        self.assertEqual(self.queue.get_current_song(), "Song B")
+
+    def test_empty_queue(self):
+        empty_queue = Songs_Queue([])
+        self.assertIsNone(empty_queue.next_song())
+        self.assertIsNone(empty_queue.prev_song())
+        self.assertIsNone(empty_queue.get_current_song())
+
+    def test_set_current_index(self):
+        self.queue.set_current_index(2)
+        self.assertEqual(self.queue.index, 2)
+        self.assertEqual(self.queue.current_index, 2)
+        with self.assertRaises(IndexError):
+            self.queue.set_current_index(10)
+
+    def test_get_song_at_index(self):
+        self.assertEqual(self.queue.get_song_at_index(0), "Song A")
+        self.assertEqual(self.queue.get_song_at_index(2), "Song C")
+        self.assertIsNone(self.queue.get_song_at_index(10))
+
+    def test_save_and_load_json(self):
+        original_queue = self.queue.queue.copy()
+        original_index = self.queue.index
+        original_current_index = self.queue.current_index
+
+        self.queue.save_to_json()
+        new_queue = Songs_Queue()  # This should load from the JSON file
+
+        self.assertEqual(new_queue.queue, original_queue)
+        self.assertEqual(new_queue.index, original_index)
+        self.assertEqual(new_queue.current_index, original_current_index)
+
 
 if __name__ == '__main__':
     unittest.main()

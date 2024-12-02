@@ -7,14 +7,15 @@
 <div align="center">
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![DOI](https://zenodo.org/badge/533639670.svg)](https://zenodo.org/badge/latestdoi/533639670)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14226015.svg)](https://doi.org/10.5281/zenodo.14226015)
 [![Build Status](https://github.com/ForkBombers/Enigma/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions)
 [![GitHub Release](https://img.shields.io/github/release/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma/releases)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![GitHub contributors](https://img.shields.io/badge/contributors-4-green)](https://github.com/ForkBombers/Enigma/graphs/contributors)
-[![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues)
+[![GitHub contributors](https://img.shields.io/badge/contributors-3-green)](https://github.com/ForkBombers/Enigma#--contributors--)
+[![Open Issues](https://img.shields.io/badge/issues-0-yellow)](https://github.com/ForkBombers/Enigma/issues?q=is%3Aopen+is%3Aissue)
 [![Pull Requests](https://img.shields.io/badge/pull%20requests-0-yellow)](https://github.com/ForkBombers/Enigma/pulls)
+[![YAPF](https://img.shields.io/badge/code%20style-yapf-ff69b4)](https://github.com/ForkBombers/Enigma/blob/main/.github/workflows/code-formatter.yml)
 ![Supports Python](https://img.shields.io/pypi/pyversions/pytest)
 [![Formatting python code](https://github.com/ForkBombers/Enigma/actions/workflows/code-formatter.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions/workflows/code-formatter.yml)
 [![codecov](https://codecov.io/gh/rahulgautam21/Enigma/branch/main/graph/badge.svg?token=OEPEJ0W8CR)](https://codecov.io/gh/rahulgautam21/Enigma)
@@ -143,13 +144,13 @@ Documentation for the code available at - <a href="https://saswat123.github.io/E
 
 <h1> 👥 Contributors <a name="Contributors"></a> </h1>
 
-### Group 86
+### Group 90
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/rohit-sram"><img src="https://avatars.githubusercontent.com/u/58294503?v=4" width="75px;" alt=""/><br /><sub><b>Rohit Sriram</b></sub></a></td>
-    <td align="center"><a href="https://github.com/RandomOscillations"><img src="https://avatars.githubusercontent.com/u/118115384?v=4" width="75px;" alt=""/><br /><sub><b>Adithya Srinivasan</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/veera2508"><img src="https://avatars.githubusercontent.com/u/52314413?v=4" width="75px;" alt=""/><br /><sub><b>Veeraraghavan Narasimhan</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/KaustubhAs"><img src="https://avatars.githubusercontent.com/u/58294503?v=4" width="75px;" alt=""/><br /><sub><b>Kaustubh Sonawane</b></sub></a></td>
+    <td align="center"><a href="https://github.com/iamNikitaC"><img src="https://avatars.githubusercontent.com/u/87129562?v=4" width="75px;" alt=""/><br /><sub><b>Nikita Chaudhari</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/tejasdesai27"><img src="https://avatars.githubusercontent.com/u/139948226?v=4" width="75px;" alt=""/><br /><sub><b>Tejas Desai</b></sub></a><br /></td>
   </tr>
 
 </table>
