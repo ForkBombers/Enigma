@@ -37,8 +37,8 @@
   <li>Can be used in chat rooms by teams, friends, organizations to encourage a 'sound' environment </li>
   <li>Capability to toggle music pause/resume</li>
   <li>Capability to play any song- requires no youtube search</li>
-  <li>Capability to switch back and forth between songs</li>
-  <li>Capability to shuffle songs in queue</li>
+  <li>Capability to iterate between songs</li>
+  <li>Capability to like or dislike the songs in queue</li>
   <li>Authorize specific channels for the bot to access</li>
   <li>Acts as an amplifier - can be used to play same music on multiple speakers to give a surround sound effect and increase volume output</li>
 </ul>
@@ -46,16 +46,15 @@
 
 </div>
   
-<h1> 📣 V3 : New Features </h1>
+<h1> 📣 V4 : New Features </h1>
 
 <div>
 <ul>
-  <li>Added a new functionality to add a custom song to the queue</li>
-  <li>Added a new functionality to shuffle the songs within the queue</li>
-  <li>A play feature to continue playing from queue</li>
-  <li>Reconnect command to reconnect to VC</li>
-  <li>Added authorization feature for channels and roles</li>
-  <li>Made Enigma accessible on Linux and Windows</li>  <!-- maybe add it at the top LATER? -->
+  <li>Added a new functionality to jump to a custom song in the queue</li>
+  <li>Added a new functionality to move the songs within the queue</li>
+  <li>Added a new functionality to loop the a currnet playing song or queue</li>
+  <li>Feedback command to generate recommendations based on likes and dislikes</li>
+  <li>A new command to replay the currently playing song while its playing</li>  <!-- maybe add it at the top LATER? -->
 </ul>
 </div>
 
@@ -124,17 +123,13 @@ What We've Done:
   * Added a lil more functionality to Enigma:
       * `]play` command to play from queue 
       * `]reconnect` to reconnect Enigma to Voice channel 
-      * Enigma now checks for Authorized roles and channels
+      * Enigma checks for Authorized roles and channels
 
 Scope for the future:
   * Make the song recommendations more sophisticated by using content-based recommender systems.
   * User profile integration with bot
-  * Integrating likes and dislikes for profiled users- for potentially personalized recommendations.
   * Broader platform access(ubuntu, Android, iOS etc.)
-  * More functionalitiies for the bot: 
-      * Loop and replay features
-      * Move a song within a queue or to the top of the queue
-      * Jump to a specific song in the queue
+  * More functionalitiies for the bot
   * A Dataset suggestion : ['Music Dataset (1950-2019)'](https://www.kaggle.com/datasets/saurabhshahane/music-dataset-1950-to-2019)
 
 <h1> 📖 Documentation</h1>
@@ -165,7 +160,7 @@ The dataset for Enigma is present [here](https://www.kaggle.com/datasets/saurabh
 You can find the dataset here <a href='https://www.kaggle.com/datasets/leonardopena/top-spotify-songs-from-20102019-by-year'>Top Spotify Songs (2010-2019)</a> which contains around 600 songs.
 
 <h1> Support </h1>
-For any support reach out to rsriram3@ncsu.edu
+For any support reach out to nchaudh5@ncsu.edu, ksonawa@ncsu.edu, tdesai@ncsu.edu
 
 
 
