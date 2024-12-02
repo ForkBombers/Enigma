@@ -9,7 +9,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14226015.svg)](https://doi.org/10.5281/zenodo.14226015)
 [![Build Status](https://github.com/ForkBombers/Enigma/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/ForkBombers/Enigma/actions)
-[![GitHub Release](https://img.shields.io/github/release/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma/releases)
+[![GitHub Release](https://img.shields.io/badge/release-V4-red)](https://github.com/ForkBombers/Enigma/releases)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/ForkBombers/Enigma.svg)](https://github.com/ForkBombers/Enigma)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub contributors](https://img.shields.io/badge/contributors-3-green)](https://github.com/ForkBombers/Enigma#--contributors--)
