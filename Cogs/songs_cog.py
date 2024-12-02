@@ -369,7 +369,7 @@ class Songs(commands.Cog):
             disliked_songs.update(feedback['disliked'])
 
         # Recommend songs based on feedback (excluding disliked and favoring liked)
-        all_songs = random_25()  # Or use your existing recommendation function
+        all_songs = random_25()
         recommended_songs = [
             song for song in all_songs if song not in disliked_songs
         ]
@@ -566,40 +566,45 @@ class Songs(commands.Cog):
                 voice_client.pause()
                 await self.play_song(ctx, song_name=song_name)
                 return
+
     """
     Function to move songs within the queue
     """
 
-    @commands.command(name="move_song", help="Move a song to a different position in the queue")
+    @commands.command(name="move_song",
+                      help="Move a song to a different position in the queue")
     @has_role_dj()
     async def move_song(self, ctx, from_pos: int, to_pos: int):
-            empty_queue = await self.handle_empty_queue(ctx)
-            if empty_queue:
-                return
+        empty_queue = await self.handle_empty_queue(ctx)
+        if empty_queue:
+            return
 
-            # Adjust positions to be 0-indexed
-            from_pos -= 1
-            to_pos -= 1
+        # Adjust positions to be 0-indexed
+        from_pos -= 1
+        to_pos -= 1
 
-            if self.songs_queue.move_song(from_pos, to_pos):
-                await ctx.send(f"Moved song from position {from_pos + 1} to {to_pos + 1}")
-                await self.display_queue(ctx)
-            else:
-                await ctx.send("Invalid positions. Please check the queue and try again.")
+        if self.songs_queue.move_song(from_pos, to_pos):
+            await ctx.send(
+                f"Moved song from position {from_pos + 1} to {to_pos + 1}")
+            await self.display_queue(ctx)
+        else:
+            await ctx.send(
+                "Invalid positions. Please check the queue and try again.")
 
     async def display_queue(self, ctx):
-            queue, index = self.songs_queue.return_queue()
-            queue_message = "Current Queue:\n"
-            for i, song in enumerate(queue, start=1):
-                if i - 1 == index:
-                    queue_message += f"**{i}. {song} (Currently Playing)**\n"
-                else:
-                    queue_message += f"{i}. {song}\n"
-            await ctx.send(queue_message)
+        queue, index = self.songs_queue.return_queue()
+        queue_message = "Current Queue:\n"
+        for i, song in enumerate(queue, start=1):
+            if i - 1 == index:
+                queue_message += f"**{i}. {song} (Currently Playing)**\n"
+            else:
+                queue_message += f"{i}. {song}\n"
+        await ctx.send(queue_message)
 
     """
         Function to add the cog to the bot
     """
+
 
 async def setup(client):
     await client.add_cog(Songs(client))

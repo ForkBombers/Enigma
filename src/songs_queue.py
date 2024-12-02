@@ -86,12 +86,14 @@ class Songs_Queue:
             return None
         if self.loop_mode == "song":
             return self.queue[self.index]
-        self.index -= 1
-        if self.index < 0:
-            if self.loop_mode == "queue":
-                self.index = len(self.queue) - 1
-            else:
-                self.index = 0
+        # Decrement the index and wrap around if needed
+        self.index = (self.index - 1) % len(self.queue)
+        # self.index -= 1
+        # if self.index < 0:
+        #     if self.loop_mode == "queue":
+        #         self.index = len(self.queue) - 1
+        #     else:
+        #         self.index = 0
         self.current_index = self.index
         self.save_to_json()
         return self.queue[self.index]
@@ -144,7 +146,7 @@ class Songs_Queue:
                 self.save_to_json()
                 return song
         return None
-    
+
     def move_song(self, from_pos, to_pos):
         if 0 <= from_pos < len(self.queue) and 0 <= to_pos < len(self.queue):
             song = self.queue.pop(from_pos)
